@@ -1,4 +1,9 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
 <title>Fursan Travel v2</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0e3317">
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
 /* Concept: the page is one flight. A single route line takes off in the hero and lands in the footer; the booking journey is a boarding pass that gets stamped; destinations are a postage-stamp collection; services stack like luggage tags. Grain everywhere, glass only where it floats. */
@@ -586,6 +591,64 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
   .rl{flex-direction:column;align-items:flex-start}
 }
 
+/* ============ MOBILE LITE + APP FOCUS ============ */
+.happ,.appm,.appbar{display:none}
+@media (max-width:760px){
+  .bar .seg,.bar .hide-s{display:none!important}
+  .mapp{display:inline-flex!important;align-items:center;height:38px;padding:0 14px;border-radius:12px;background:var(--amber);color:var(--ink);font-weight:800;font-size:13.5px;white-space:nowrap}
+  .hero{min-height:88svh;padding:96px 0 70px}
+  .hero h1{font-size:clamp(38px,11vw,52px)}
+  .hero .lead{font-size:16px}
+  .hdots{margin-top:14px}
+  .happ{display:block;margin-top:22px}
+  .happ .stores{display:flex;gap:10px;flex-wrap:wrap}
+  .happ .stores .badge,.apcard .stores .badge{height:46px}
+  .happ .alt{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:14px;font-weight:700;color:#fff;border-bottom:1.5px solid rgba(255,255,255,.6);padding-bottom:2px}
+  .happ .alt svg{width:16px;height:16px}
+  body:not(.msearch) #console{display:none}
+  body.msearch #console{margin-top:18px}
+  .appm{display:block;padding:10px 0 40px;background:#fff;position:relative;z-index:2}
+  .apcard{position:relative;overflow:hidden;border-radius:28px;background:var(--g9);color:#fff;padding:28px 22px 24px;box-shadow:0 30px 50px -30px rgba(8,34,17,.7)}
+  .apcard::after{content:"";position:absolute;inset:0;background-image:var(--noise);opacity:.3;mix-blend-mode:overlay;pointer-events:none}
+  .apcard .ico{width:58px;height:58px;border-radius:16px;background:#fff;display:grid;place-items:center;box-shadow:0 10px 20px -10px rgba(0,0,0,.5)}
+  .apcard .ico svg{height:44px;width:44px}
+  .apcard h2{font-size:32px;line-height:1.25;margin:16px 0 6px;color:#fff;max-width:none}
+  .apcard p{color:rgba(255,255,255,.75);font-size:15px}
+  .apfeat{list-style:none;padding:0;margin:20px 0 22px;display:grid;gap:12px}
+  .apfeat li{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600}
+  .apfeat li i{width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none}
+  .apfeat li svg{width:19px;height:19px;color:var(--amber)}
+  .apcard .stores{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+  .apglow{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(253,162,4,.35),transparent 70%);top:-90px;inset-inline-end:-90px;pointer-events:none}
+  .appbar{display:flex;position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));align-items:center;gap:12px;padding:10px;border-radius:20px;background:rgba(13,34,19,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;box-shadow:0 20px 40px -14px rgba(0,0,0,.55);transform:translateY(140%);transition:transform .5s cubic-bezier(.3,.9,.3,1)}
+  body.showbar .appbar{transform:none}
+  body.nobar .appbar{display:none}
+  .appbar .ico{width:42px;height:42px;border-radius:12px;background:#fff;display:grid;place-items:center;flex:none}
+  .appbar .ico svg{height:32px;width:32px}
+  .appbar .t{flex:1;min-width:0;line-height:1.25}.appbar .t b{display:block;font-size:14.5px}.appbar .t small{font-size:12px;opacity:.7}
+  .appbar .dl{height:40px;padding:0 16px;border-radius:12px;background:var(--amber);color:var(--ink);font-weight:800;font-size:14px;display:inline-flex;align-items:center}
+  .appbar .x{width:30px;height:30px;display:grid;place-items:center;opacity:.6;flex:none;color:#fff}.appbar .x svg{width:14px;height:14px}
+  .wv,#aiBtn{display:none!important}
+  .svcs{padding:60px 0 30px}
+  .stack{grid-template-columns:1fr 1fr;gap:12px}
+  .scard{min-height:0!important;border-radius:22px}
+  .scard .txt{padding:16px 16px 10px}
+  .scard .txt h3{font-size:18px}
+  .scard .txt p,.scard .txt ul,.scard .act{display:none}
+  .scard .vis{min-height:110px!important;height:110px}
+  .scard{display:block!important;height:168px!important;position:relative;overflow:hidden;transform:none!important}
+  .scard>.txt,.scard>.vis{display:none!important}
+  .scard .mini{display:block!important;position:absolute;inset:0;opacity:1!important;transform:none!important;padding:16px;pointer-events:auto}
+  .scard .mini b{font-size:17px;max-width:85%}
+  .scard .mini small{font-size:12px}
+  .scard .mini img{height:62%;max-width:58%;bottom:-2%}
+  .scard .mini .go2{display:none}
+  .board{display:none}
+  .ftg>div:not(:first-child):not(.apps){display:none}
+  .ftg{grid-template-columns:1fr;gap:26px}
+  footer.land{padding-bottom:110px}
+}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width:1180px){.nav{display:none}}
 @media (max-width:1000px){
@@ -729,7 +792,7 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
         <a id="openAi2"><svg class="i"><use href="#ic-spark"/></svg><span><b class="ar">مساعد فرسان</b><b class="en">Fursan assistant</b><small class="ar">احجز بصوتك أو بالكتابة</small><small class="en">Book by voice or text</small></span></a>
       </div>
     </div>
-    <button class="ub langb" id="langBtn"><span class="ar"><img class="flag" src="i/flag-us.svg" alt="">EN</span><span class="en"><img class="flag" src="i/flag-sa.svg" alt="">ع</span></button>
+    <a class="mapp" href="#app" style="display:none"><span class="ar">حمّل التطبيق</span><span class="en">Get the app</span></a><button class="ub langb" id="langBtn"><span class="ar"><img class="flag" src="i/flag-us.svg" alt="">EN</span><span class="en"><img class="flag" src="i/flag-sa.svg" alt="">ع</span></button>
     <div class="drop" id="userDrop">
       <button class="avbtn" id="userBtn" aria-label="Account"><img src="i/avatar.webp" alt=""><span class="dot"></span></button>
       <div class="menu glass umenu">
@@ -763,7 +826,7 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
       <h1 class="corp-only"><span class="ar">سفر فريــقك<br><span class="hl">بموافقة</span> في دقائق</span><span class="en">Team travel,<br><span class="hl">approved</span> in minutes</span></h1>
       <p class="lead ind-only"><span class="ar">ابحث، قارن، وأكّد رحلتك في أقل من دقيقة، ونحن معك على مدار الساعة.</span><span class="en">Search, compare and confirm in under a minute, with us around the clock.</span></p>
       <p class="lead corp-only"><span class="ar">احجز لأي موظف ضمن سياسة شركتك، وأرسل الطلب للموافقة، وادفع بفاتورة شهرية موحّدة.</span><span class="en">Book any employee within policy, route it for approval, pay on one monthly invoice.</span></p>
-    <div class="hdots"><span class="hloc"><svg class="i"><use href="#ic-pin"/></svg><span id="hloc"><span class="hl0" ><span class="ar">جزر في في، تايلاند</span><span class="en">Phi Phi Islands, Thailand</span></span><span class="hl1" hidden><span class="ar">جزر المالديف</span><span class="en">The Maldives</span></span><span class="hl2" hidden><span class="ar">بحيرة أوشينن، سويسرا</span><span class="en">Lake Oeschinen, Switzerland</span></span><span class="hl3" hidden><span class="ar">المضائق، النرويج</span><span class="en">The fjords, Norway</span></span><span class="hl4" hidden><span class="ar">العُلا، السعودية</span><span class="en">AlUla, Saudi Arabia</span></span></span></span><span class="hbars" id="hbars"><button aria-label="Phi Phi Islands, Thailand" class="on"><i></i></button><button aria-label="The Maldives" class=""><i></i></button><button aria-label="Lake Oeschinen, Switzerland" class=""><i></i></button><button aria-label="The fjords, Norway" class=""><i></i></button><button aria-label="AlUla, Saudi Arabia" class=""><i></i></button></span></div>
+    <div class="hdots"><span class="hloc"><svg class="i"><use href="#ic-pin"/></svg><span id="hloc"><span class="hl0" ><span class="ar">جزر في في، تايلاند</span><span class="en">Phi Phi Islands, Thailand</span></span><span class="hl1" hidden><span class="ar">جزر المالديف</span><span class="en">The Maldives</span></span><span class="hl2" hidden><span class="ar">بحيرة أوشينن، سويسرا</span><span class="en">Lake Oeschinen, Switzerland</span></span><span class="hl3" hidden><span class="ar">المضائق، النرويج</span><span class="en">The fjords, Norway</span></span><span class="hl4" hidden><span class="ar">العُلا، السعودية</span><span class="en">AlUla, Saudi Arabia</span></span></span></span><span class="hbars" id="hbars"><button aria-label="Phi Phi Islands, Thailand" class="on"><i></i></button><button aria-label="The Maldives" class=""><i></i></button><button aria-label="Lake Oeschinen, Switzerland" class=""><i></i></button><button aria-label="The fjords, Norway" class=""><i></i></button><button aria-label="AlUla, Saudi Arabia" class=""><i></i></button></span></div><div class="happ"><div class="stores" data-stores></div><a class="alt" href="#" id="mSearch"><svg class="i"><use href="#ic-search"/></svg><span class="ar">أو ابحث واحجز من الموقع</span><span class="en">Or search and book on the web</span></a></div>
     </div>
    </div>
 
@@ -852,6 +915,19 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
 <!-- ================= JOURNEY ================= -->
 
 <!-- ================= DESTINATIONS ================= -->
+<section class="appm" id="app"><div class="wrap"><div class="apcard"><span class="apglow"></span>
+ <div class="ico"><svg viewBox="0 0 256 256"><use href="#logo" width="890.068" height="256"/></svg></div>
+ <h2><span class="ar">رحلتك كاملة في جيبك</span><span class="en">Your whole trip, in your pocket</span></h2>
+ <p><span class="ar">حمّل تطبيق فرسان واحجز أسرع، وتابع رحلتك خطوة بخطوة.</span><span class="en">Get the Fursan app to book faster and follow every step of your trip.</span></p>
+ <ul class="apfeat">
+  <li><i><svg class="i"><use href="#ic-spark"/></svg></i><span><span class="ar">عروض حصرية للتطبيق</span><span class="en">App-only deals</span></span></li>
+  <li><i><svg class="i"><use href="#ic-ticket"/></svg></i><span><span class="ar">تذاكرك وبطاقة الصعود بدون إنترنت</span><span class="en">Tickets and boarding passes offline</span></span></li>
+  <li><i><svg class="i"><use href="#ic-clock"/></svg></i><span><span class="ar">تنبيهات فورية بتغييرات الرحلة</span><span class="en">Instant alerts on flight changes</span></span></li>
+  <li><i><svg class="i"><use href="#ic-headset"/></svg></i><span><span class="ar">دعم مباشر على مدار الساعة</span><span class="en">Live support around the clock</span></span></li>
+ </ul>
+ <div class="stores" data-stores></div>
+</div></div></section>
+
 <section class="dest" id="offers">
   <div class="dpin">
     <div class="grainbg"></div>
@@ -1005,7 +1081,8 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
       <button class="send" id="aiSend" aria-label="send"><svg class="i"><use href="#ic-arrow"/></svg></button>
     </div>
   </div>
-  <button class="wv" id="aiBtn"><span class="ring2"></span><span class="orb"><canvas data-wave></canvas></span><span class="lbl"><b><span class="ar">اسأل فرسان</span><span class="en">Ask Fursan</span></b><small><span class="ar">بصوتك أو بالكتابة</span><span class="en">Voice or text</span></small></span></button>
+  <div class="appbar" id="appbar" role="complementary"><span class="ico"><svg viewBox="0 0 256 256"><use href="#logo" width="890.068" height="256"/></svg></span><span class="t"><b><span class="ar">تطبيق فرسان</span><span class="en">Fursan app</span></b><small><span class="ar">عروض حصرية وحجز أسرع</span><span class="en">Exclusive deals, faster booking</span></small></span><a class="dl" href="#" data-store><span class="ar">تحميل</span><span class="en">Get it</span></a><button class="x" id="appbarX" aria-label="Close"><svg class="i"><use href="#ic-x"/></svg></button></div>
+<button class="wv" id="aiBtn"><span class="ring2"></span><span class="orb"><canvas data-wave></canvas></span><span class="lbl"><b><span class="ar">اسأل فرسان</span><span class="en">Ask Fursan</span></b><small><span class="ar">بصوتك أو بالكتابة</span><span class="en">Voice or text</span></small></span></button>
 </div>
 
 <script>
@@ -1150,6 +1227,18 @@ let lastY=scrollY,vel=0;
   cur=n;bars(n);load((n+1)%S.length);if(!RM)tm=setTimeout(()=>go(cur+1),7000)}
  B.forEach((b,i)=>b.onclick=()=>go(i));
  load(0);bars(0);setTimeout(()=>{S.forEach((_,i)=>i&&load(i))},1200);if(!RM)tm=setTimeout(()=>go(1),7000);})();
+
+/* ===== mobile lite: OS-aware store badges, search toggle, sticky app bar ===== */
+(function(){const ua=navigator.userAgent||'',ios=/iPhone|iPad|iPod/i.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1),and=/Android/i.test(ua);
+ const src=$$('.apb .store2');const apple=src[0],gp=src[1];const order=and?[gp,apple]:[apple,gp];
+ $$('[data-stores]').forEach(box=>order.forEach(a=>a&&box.appendChild(a.cloneNode(true))));
+ const main=ios?apple:and?gp:null;$$('[data-store]').forEach(a=>{a.href=main?main.getAttribute('href'):'#app'});
+ const ms=$('#mSearch');if(ms)ms.onclick=e=>{e.preventDefault();document.body.classList.add('msearch');ms.style.display='none';$('#console').scrollIntoView({behavior:'smooth',block:'center'})};
+ let closed=false;try{closed=sessionStorage.getItem('fx_bar')==='0'}catch(e){}
+ if(closed)document.body.classList.add('nobar');
+ const x=$('#appbarX');if(x)x.onclick=()=>{document.body.classList.add('nobar');try{sessionStorage.setItem('fx_bar','0')}catch(e){}};
+ const hero=$('#hero'),app=$('#app');const upd=()=>{const y=scrollY;const past=y>hero.offsetHeight*.6;const r=app.getBoundingClientRect();const onCard=r.top<innerHeight&&r.bottom>0;document.body.classList.toggle('showbar',past&&!onCard)};addEventListener('scroll',upd,{passive:true});upd();
+})();
 
 /* ===== scroll engine ===== */
 const bar=$('#bar'),hero=$('#hero');
