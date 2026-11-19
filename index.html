@@ -644,44 +644,26 @@ html[dir=rtl] .tvc span{padding:0 10px 0 6px}
   .pkbd{position:fixed;inset:0;z-index:120;background:rgba(5,20,10,.4);opacity:0;pointer-events:none;transition:opacity .25s}
   .pkbd.on{opacity:1;pointer-events:auto}
 }
-/* ============ SEARCH LOADER (brand) ============ */
-.sld{position:fixed;inset:0;z-index:135;display:grid;place-items:center;background:var(--g10);color:#fff;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;overflow:hidden}
+/* ============ SEARCH LOADER (minimal) ============ */
+.sld{position:fixed;inset:0;z-index:135;display:grid;place-items:center;background:rgba(251,252,250,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--ink);opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s}
 .sld.on{opacity:1;visibility:visible}
-.sld::after{content:"";position:absolute;inset:0;background-image:var(--noise);opacity:.3;mix-blend-mode:overlay;pointer-events:none}
-.sld .glow{position:absolute;width:70vmax;height:70vmax;border-radius:50%;background:radial-gradient(circle,rgba(66,159,66,.35),transparent 60%);top:50%;left:50%;transform:translate(-50%,-55%)}
-.sldin{position:relative;z-index:1;width:min(560px,90vw);text-align:center}
-.emb{width:84px;height:84px;margin:0 auto;border-radius:50%;background:#fff;display:grid;place-items:center;position:relative;box-shadow:0 20px 40px -14px rgba(0,0,0,.6)}
-.emb svg{width:64px;height:64px}
-.emb::before,.emb::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:1.5px solid rgba(127,208,124,.55);animation:sring 1.8s cubic-bezier(.2,.6,.3,1) infinite}
-.emb::after{animation-delay:.9s}
-@keyframes sring{0%{transform:scale(.85);opacity:1}100%{transform:scale(1.9);opacity:0}}
-.sld .emb{animation:embIn .6s cubic-bezier(.3,1.4,.4,1) both}
-@keyframes embIn{from{transform:scale(.4);opacity:0}}
-.sroute{position:relative;margin:34px auto 0;height:150px;direction:ltr}
-.sroute svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.sroute .base{fill:none;stroke:rgba(255,255,255,.18);stroke-width:2;stroke-dasharray:2 8;stroke-linecap:round}
-.sroute .draw{fill:none;stroke:var(--amber);stroke-width:2.5;stroke-linecap:round}
-.sroute .pt{fill:var(--g10);stroke:#fff;stroke-width:2.5}
-.sroute .pt.b{stroke:var(--amber)}
-.sroute .pl{color:#fff}
-.rlab{position:absolute;top:calc(80% + 16px);display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12.5px;color:rgba(255,255,255,.7);transform:translateX(-50%)}
-.pl2{position:absolute;left:0;top:0;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.5);will-change:transform}
-.pl2 svg{width:22px;height:22px;color:var(--g10);stroke-width:2}
-.rlab b{font-size:26px;color:#fff;letter-spacing:.06em;line-height:1}
-.rlab.a{left:5%}.rlab.b{left:95%}
-.sicon{width:96px;height:96px;margin:30px auto 0;border-radius:28px;background:rgba(255,255,255,.08);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
-.sicon svg{width:42px;height:42px;color:var(--amber);animation:bob 1.4s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(-6px)}}
-.sld h4{font-size:26px;margin-top:34px;line-height:1.35}
-.sroute+h4{margin-top:78px}
-.sld .stx{height:24px;margin-top:8px;font-size:15px;color:rgba(255,255,255,.72);position:relative;overflow:hidden}
-.sld .stx span{position:absolute;inset:0;animation:stx .5s cubic-bezier(.3,.9,.3,1) both}
-@keyframes stx{from{transform:translateY(100%);opacity:0}}
-.sbar{width:220px;height:4px;border-radius:4px;background:rgba(255,255,255,.12);margin:22px auto 0;overflow:hidden}
-.sbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g),var(--amber));border-radius:4px}
-.sld.on .sbar i{animation:sbar var(--sd,2s) cubic-bezier(.5,0,.3,1) forwards}
-@keyframes sbar{to{width:100%}}
-@media (max-width:760px){.sld h4{font-size:22px}.rlab b{font-size:21px}.sroute{height:120px}}
+.sldin{width:min(440px,84vw);text-align:center;transform:translateY(8px);opacity:0;transition:transform .6s cubic-bezier(.2,.8,.2,1) .08s,opacity .5s ease .08s}
+.sld.on .sldin{transform:none;opacity:1}
+.emb{width:36px;height:36px;margin:0 auto 44px}
+.emb svg{width:100%;height:100%}
+.lr{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;direction:ltr}
+.lr .c{text-align:center}
+.lr .c b{display:block;font-family:Poppins,var(--f);font-weight:500;font-size:30px;letter-spacing:.04em;line-height:1}
+.lr .c small{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+.trk{position:relative;height:2px;margin-bottom:22px;background:rgba(13,34,19,.1);border-radius:2px}
+.trk i{position:absolute;inset:0 auto 0 0;width:0;background:var(--g);border-radius:2px}
+.trk .pl2{position:absolute;top:50%;left:0;width:22px;height:22px;margin:-11px 0 0 -11px;display:grid;place-items:center}
+.trk .pl2 svg{width:20px;height:20px;fill:var(--ink);transform:rotate(90deg)}
+.solo{width:160px;margin:0 auto}
+.sld .stx{margin-top:34px;height:20px;position:relative;font-size:14px;color:var(--muted)}
+.sld .stx span{position:absolute;inset:0;animation:stx .45s ease both}
+@keyframes stx{from{opacity:0;transform:translateY(4px)}}
+@media (max-width:760px){.lr .c b{font-size:24px}.lr{gap:12px}}
 
 /* ============ COUNTDOWN on stamps ============ */
 .cd{position:absolute;left:6px;right:6px;top:calc(100% + 16px);z-index:6;padding:10px 14px 12px;border-radius:16px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 10px 24px -14px rgba(8,34,17,.35),0 0 0 1px rgba(13,34,19,.06);overflow:hidden}
@@ -1714,16 +1696,15 @@ renderFields();buildNames();
 
 /* ===== brand search loader ===== */
 const SL=document.createElement('div');SL.className='sld';SL.setAttribute('aria-live','polite');document.body.appendChild(SL);
-function runLoader(an,cb){const A=lang==='ar',dur=RM?500:2300;SL.style.setProperty('--sd',dur+'ms');
- const vis=an.a?`<div class="sroute"><svg viewBox="0 0 400 150" preserveAspectRatio="none"><path class="base" d="M20,120 C120,-20 280,-20 380,120"/><path class="draw" d="M20,120 C120,-20 280,-20 380,120"/><circle class="pt" cx="20" cy="120" r="7"/><circle class="pt b" cx="380" cy="120" r="7"/></svg><span class="pl2"><svg class="i"><use href="#ic-flight"/></svg></span><div class="rlab a"><b>${an.a.c}</b>${an.a[lang]}</div><div class="rlab b"><b>${an.b.c}</b>${an.b[lang]}</div></div>`:`<div class="sicon"><svg class="i"><use href="#${an.icon}"/></svg></div>`;
- SL.innerHTML=`<div class="glow"></div><div class="sldin"><div class="emb"><svg viewBox="0 0 256 256"><use href="#logo" width="890.068" height="256"/></svg></div>${vis}<h4>${A?an.tA:an.tE}</h4><div class="stx"><span>${(A?an.sA:an.sE)[0]}</span></div><div class="sbar"><i></i></div></div>`;
+function runLoader(an,cb){const A=lang==='ar',dur=RM?400:1900;
+ const t=A?an.tA:an.tE,steps=[t,...(A?an.sA:an.sE)];
+ const vis=an.a?`<div class="lr"><div class="c"><b>${an.a.c==='MKX'?'JED':an.a.c}</b><small>${an.a[lang]}</small></div><div class="trk"><i></i><span class="pl2"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></span></div><div class="c"><b>${an.b.c==='MKX'?'JED':an.b.c}</b><small>${an.b[lang]}</small></div></div>`:`<div class="trk solo"><i></i></div>`;
+ SL.innerHTML=`<div class="sldin"><div class="emb"><svg viewBox="0 0 256 256"><use href="#logo" width="890.068" height="256"/></svg></div>${vis}<div class="stx"><span>${steps[0]}</span></div></div>`;
  SL.classList.remove('on');void SL.offsetWidth;SL.classList.add('on');document.documentElement.style.overflow='hidden';
- const steps=A?an.sA:an.sE;let k=0;const st=setInterval(()=>{k++;if(k>=steps.length)return;SL.querySelector('.stx').innerHTML=`<span>${steps[k]}</span>`},Math.max(400,dur/steps.length));
- if(an.a){const p=SL.querySelector('.draw'),L2=p.getTotalLength(),g=SL.querySelector('.pl2');p.style.strokeDasharray=L2;p.style.strokeDashoffset=L2;const t0=performance.now();
-  const fr=t=>{let q=Math.min(1,(t-t0)/(dur*.92));const e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;p.style.strokeDashoffset=L2*(1-e);const pt=p.getPointAtLength(L2*e),pt2=p.getPointAtLength(Math.min(L2,L2*e+1));
-   const box=SL.querySelector('.sroute'),sx=box.offsetWidth/400,sy=box.offsetHeight/150;const ang=Math.atan2((pt2.y-pt.y)*sy,(pt2.x-pt.x)*sx)*180/Math.PI;
-   g.style.transform=`translate(${pt.x*sx}px,${pt.y*sy}px)`;g.firstChild.style.transform=`rotate(${ang+16}deg)`;if(q<1&&SL.classList.contains('on'))requestAnimationFrame(fr)};requestAnimationFrame(fr)}
- setTimeout(()=>{clearInterval(st);cb();SL.classList.remove('on')},dur)}
+ let k=0;const st=setInterval(()=>{k++;if(k<steps.length)SL.querySelector('.stx').innerHTML=`<span>${steps[k]}</span>`},dur/steps.length);
+ const bar=SL.querySelector('.trk i'),pl=SL.querySelector('.trk .pl2'),t0=performance.now();
+ const fr=now=>{const q=Math.min(1,(now-t0)/dur),e=q<.5?4*q*q*q:1-Math.pow(-2*q+2,3)/2;bar.style.width=(e*100)+'%';if(pl)pl.style.left=`calc(11px + (100% - 22px)*${e})`;if(q<1&&SL.classList.contains('on'))requestAnimationFrame(fr)};requestAnimationFrame(fr);
+ setTimeout(()=>{clearInterval(st);cb();SL.classList.remove('on')},dur+120)}
 const _openRS=openRS;
 openRS=function(D){const A=lang==='ar',tab=$('.svc [role=tab][aria-selected=true]').dataset.tab;let an;
  const nat=NAT.find(x=>x[0]===ST.vs.nat);
