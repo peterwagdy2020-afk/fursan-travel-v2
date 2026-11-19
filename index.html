@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!doctype html><html lang="ar" dir="rtl">
 <title>Fursan Travel v2</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -116,8 +115,8 @@ html[dir=rtl] .bar{padding-inline:16px 10px}
 .menu small{display:block;color:var(--muted);font-size:12px}
 
 /* ============ HERO ============ */
-.hero{position:relative;min-height:max(760px,100svh);padding:120px 0 150px;z-index:2;background:#0c4a4a;color:#fff;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-.hbg{position:absolute;inset:0;z-index:0;transform:translateY(calc(var(--hp,0)*60px));will-change:transform}
+.hero{position:relative;min-height:max(760px,100svh);padding:120px 0 150px;z-index:2;background:#0c4a4a;color:#fff;overflow-x:clip;overflow-y:visible;display:flex;flex-direction:column;justify-content:flex-end}
+.hbg{position:absolute;inset:0;z-index:0;transform:translateY(calc(var(--hp,0)*60px));will-change:transform;clip-path:inset(0 0 calc(var(--hp,0)*60px) 0)}
 .hs{position:absolute;inset:0;background:var(--img) 50% 50%/cover no-repeat;opacity:0;transition:opacity 1.6s ease;will-change:opacity,transform}
 .hs.on{opacity:1}
 .hs.kb{animation:kb 10s linear both}
@@ -198,6 +197,7 @@ html[dir=ltr] .plane img{transform:scaleX(-1)}
 .trav span:first-child{margin-inline-start:0}
 .pop{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:310px;background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:14px 16px;z-index:30;display:none;cursor:default}
 .pop.open{display:block}
+.hero:has(.pop.open),.hero:has(.acx.open),.hero:has(.pkx.open){z-index:40}
 .stp{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:15px}
 .stp small{display:block;color:var(--muted);font-size:12px}
 .ctr{display:flex;align-items:center;gap:12px}
