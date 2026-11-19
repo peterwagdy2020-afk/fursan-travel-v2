@@ -538,6 +538,8 @@ html[dir=rtl] .rsp{transform:translateX(-100%)}
 .rsf .dm{margin-inline-start:auto;flex:none;font-size:11.5px;color:var(--muted);background:#fff;padding:4px 10px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(13,34,19,.08)}
 .rsl{flex:1;overflow-y:auto;padding:0 16px calc(24px + env(safe-area-inset-bottom));display:grid;gap:10px;align-content:start}
 .rc2{display:flex;align-items:center;gap:14px;background:#fff;border-radius:20px;padding:16px;box-shadow:0 0 0 1px rgba(13,34,19,.06),0 10px 24px -18px rgba(8,34,17,.35)}
+.rc2.car .cimg{width:120px;height:80px;border-radius:14px;background:#f4f6f3;flex:none;overflow:hidden;position:relative;display:grid;place-items:center;color:var(--g8)}
+.rc2.car .cimg img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transform:scale(1.1)}
 .alg{width:42px;height:42px;border-radius:12px;background:var(--c);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;flex:none;letter-spacing:.03em}
 .hi{width:42px;height:42px;border-radius:12px;background:var(--mist2);color:var(--g8);display:grid;place-items:center;flex:none}.hi svg{width:20px;height:20px}
 .rc2 .fl{flex:1;min-width:0}
@@ -601,6 +603,13 @@ html[dir=ltr] .cald button.e{--dir1:270deg}html[dir=rtl] .cald button.e{--dir1:9
 .opl button:hover{background:var(--mist)}
 .opl button .oi{width:38px;height:38px;border-radius:12px;background:var(--mist2);color:var(--g8);display:grid;place-items:center;flex:none;font-size:18px}
 .opl button .oi svg{width:18px;height:18px}
+.opl button .oi.car{width:84px;height:56px;border-radius:12px;background:#f4f6f3;overflow:hidden;position:relative}
+.oi.car img,.cimg img{position:absolute;inset:0}.oi.car:has(img) svg,.cimg:has(img) svg{display:none}
+.opl button .oi.car img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transform:scale(1.12)}
+.opl .cc2{font-style:normal;font-family:Poppins,var(--f);font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--g8)}
+.opl button{padding:8px 10px}.opl button .oi{width:36px;height:36px;border-radius:11px;background:#f1f5f0}
+.pkx{scrollbar-width:thin;scrollbar-color:rgba(13,34,19,.18) transparent}
+.pkx::-webkit-scrollbar{width:6px}.pkx::-webkit-scrollbar-thumb{background:rgba(13,34,19,.18);border-radius:6px}.pkx::-webkit-scrollbar-track{background:transparent}
 .opl button .ot{flex:1;min-width:0}.opl b{display:block;font-size:14.5px}.opl small{display:block;font-size:12px;color:var(--muted)}
 .opl button .ck2{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1.5px rgba(13,34,19,.2);flex:none;display:grid;place-items:center}
 .opl button[aria-selected=true]{background:rgba(66,159,66,.09)}
@@ -938,6 +947,14 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
 <symbol id="ic-building" viewBox="0 0 24 24"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16M15 10h4a1 1 0 0 1 1 1v10M3 21h18M8 8h3M8 12h3M8 16h3"/></symbol>
 <symbol id="ic-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
 <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+<symbol id="ic-hand" viewBox="0 0 24 24"><path d="M11 17l2 2a1.4 1.4 0 0 0 2-2"/><path d="M14 14l2.5 2.5a1.4 1.4 0 0 0 2-2L15 11"/><path d="M21 13l-3.5-3.5L14 6l-3 3a1.5 1.5 0 0 1-2-2l3.5-3.5L18 7"/><path d="M3 13l4 4 1.5-1.5a1.4 1.4 0 0 1 2 2"/><path d="M3 7l3-3 3 3"/></symbol>
+<symbol id="ic-board" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8M7 12l3-3 2 2 4-4"/></symbol>
+<symbol id="ic-book" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z"/></symbol>
+<symbol id="ic-site" viewBox="0 0 24 24"><path d="M4 20h16M6 20V10l6-4 6 4v10M10 20v-5h4v5"/></symbol>
+<symbol id="ic-chart" viewBox="0 0 24 24"><path d="M4 20h16M6 16l4-5 3 3 5-7"/><path d="M15 7h3v3"/></symbol>
+<symbol id="ic-pen" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></symbol>
+<symbol id="ic-idcard" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.5 1.7-2 3-2s2.4.5 3 2M15 10h3M15 13h3"/></symbol>
+
 <!-- postmark (cancellation) -->
 <symbol id="pm-cancel" viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="3"><circle cx="70" cy="100" r="56"/><circle cx="70" cy="100" r="46" stroke-width="1.5"/><path d="M128 74c14-8 26 8 40 0s26 8 32 0M128 92c14-8 26 8 40 0s26 8 32 0M128 110c14-8 26 8 40 0s26 8 32 0M128 128c14-8 26 8 40 0s26 8 32 0"/></g></symbol>
 </defs></svg>
@@ -1570,8 +1587,8 @@ function doSearch(kind){const A=lang==='ar';
   const rows=gcc?[[A?'نوع الدخول':'Entry',A?'بالهوية الوطنية لمواطني الخليج':'National ID for GCC citizens']]:[[A?'نوع التأشيرة':'Visa type',A?'تُحدد حسب الجنسية وقت الطلب':'Confirmed by nationality at request'],[A?'الجواز':'Passport',A?'صالح 6 أشهر على الأقل':'Valid 6+ months'],[A?'المستندات':'Documents',A?'صورة شخصية، حجز طيران وفندق':'Photo, flight and hotel booking'],[A?'المدة المتوقعة':'Processing',A?'من 3 إلى 10 أيام عمل':'3–10 working days']];
   return openRS({kind:'other',title:A?`متطلبات السفر إلى ${co.ar}`:`Travel to ${co.en}`,sub:A?'مسافر سعودي':'Saudi traveller',html:`<div class="vr">${rows.map(r=>`<div><small>${r[0]}</small><b>${r[1]}</b></div>`).join('')}<button class="vgo sel">${A?'ابدأ الطلب':'Start application'}</button></div>`})}
  if(kind==='car'){const i=$('[data-for=car] input');const c=resolve(i);if(!c)return need(i,A?'اختر موقع الاستلام من القائمة':'Choose a pick-up location');
-  const cars=[['تويوتا كامري','Toyota Camry',A?'سيدان · 5 مقاعد':'Sedan · 5 seats',189],['هيونداي توسان','Hyundai Tucson',A?'SUV · 5 مقاعد':'SUV · 5 seats',245],['مرسيدس E-Class','Mercedes E-Class',A?'تنفيذية · سائق اختياري':'Executive · optional chauffeur',620],['جي إم سي يوكن','GMC Yukon',A?'عائلية · 7 مقاعد':'Family · 7 seats',540]];
-  return openRS({kind:'other',title:A?`سيارات في ${c.ar}`:`Cars in ${c.en}`,sub:A?'يومان · استلام من المطار':'2 days · airport pick-up',html:cars.map(x=>`<article class="rc2 h"><div class="hi"><svg class="i"><use href="#ic-car"/></svg></div><div class="fl"><b class="hn">${A?x[0]:x[1]}</b><div class="mt"><span>${x[2]}</span><span class="dr">${A?'كيلومترات مفتوحة':'Unlimited km'}</span></div></div><div class="pp"><b class="num">${SAR(x[3])}</b><small>${A?'لليوم':'per day'}</small><button class="sel">${A?'اختر':'Select'}</button></div></article>`).join('')})}
+  const cars=CAT.slice().sort((x,y)=>(y[0]===ST.car.cat)-(x[0]===ST.car.cat)).map(c=>[c[3],c[4],A?c[1]:c[2],c[5]+(ST.car.drv?180:0),c[0]]);
+  return openRS({kind:'other',title:A?`سيارات في ${c.ar}`:`Cars in ${c.en}`,sub:A?'يومان · استلام من المطار':'2 days · airport pick-up',html:cars.map(x=>`<article class="rc2 h car"><div class="cimg"><svg class="i"><use href="#ic-car"/></svg><img src="i/car-${x[4]}.webp" alt="" onerror="this.remove()"></div><div class="fl"><b class="hn">${A?x[0]:x[1]}</b><div class="mt"><span>${x[2]}</span><span class="dr">${A?'كيلومترات مفتوحة':'Unlimited km'}</span></div></div><div class="pp"><b class="num">${SAR(x[3])}</b><small>${A?'لليوم':'per day'}</small><button class="sel">${A?'اختر':'Select'}</button></div></article>`).join('')})}
  if(kind==='ins'){const i=$('[data-for=ins] input'),n=norm(i.value);const co=COUNTRIES.find(x=>norm(x.ar)===n||norm(x.en)===n)||COUNTRIES.find(x=>n&&(norm(x.ar).startsWith(n)||norm(x.en).startsWith(n)||norm(x.al).split(' ').some(w=>w.startsWith(n))));if(!co)return need(i,A?'اختر الوجهة من القائمة':'Choose a destination');
   const pl=[['أساسي','Basic',A?'طوارئ طبية حتى 150,000 ر.س':'Medical up to SAR 150,000',39],['شامل','Comprehensive',A?'طبي + إلغاء الرحلة + الأمتعة':'Medical + cancellation + baggage',79],['بلس','Plus',A?'تغطية كاملة + تأخير الرحلات':'Full cover + delays',129]];
   return openRS({kind:'other',title:A?`تأمين السفر إلى ${co.ar}`:`Insurance for ${co.en}`,sub:A?'مسافر واحد · يومان':'1 traveller · 2 days',html:pl.map(x=>`<article class="rc2 h"><div class="hi"><svg class="i"><use href="#ic-shield"/></svg></div><div class="fl"><b class="hn">${A?x[0]:x[1]}</b><div class="mt"><span>${x[2]}</span></div></div><div class="pp"><b class="num">${SAR(x[3])}</b><small>${A?'للمسافر':'per traveller'}</small><button class="sel">${A?'اختر':'Select'}</button></div></article>`).join('')})}}
@@ -1589,8 +1606,9 @@ const ST={trip:'rt',fl:{a:addD(D0,7),b:addD(D0,10)},ht:{a:addD(D0,7),b:addD(D0,9
 const NAT=[['sa','سعودي','Saudi','🇸🇦'],['ae','إماراتي','Emirati','🇦🇪'],['kw','كويتي','Kuwaiti','🇰🇼'],['bh','بحريني','Bahraini','🇧🇭'],['qa','قطري','Qatari','🇶🇦'],['om','عُماني','Omani','🇴🇲'],['eg','مصري','Egyptian','🇪🇬'],['jo','أردني','Jordanian','🇯🇴'],['lb','لبناني','Lebanese','🇱🇧'],['sy','سوري','Syrian','🇸🇾'],['ye','يمني','Yemeni','🇾🇪'],['sd','سوداني','Sudanese','🇸🇩'],['ma','مغربي','Moroccan','🇲🇦'],['tn','تونسي','Tunisian','🇹🇳'],['in','هندي','Indian','🇮🇳'],['pk','باكستاني','Pakistani','🇵🇰'],['ph','فلبيني','Filipino','🇵🇭'],['gb','بريطاني','British','🇬🇧'],['us','أمريكي','American','🇺🇸']];
 const CAT=[['eco','اقتصادية','Economy','هيونداي أكسنت أو مشابه','Hyundai Accent or similar',149],['sedan','سيدان','Sedan','تويوتا كامري أو مشابه','Toyota Camry or similar',189],['suv','SUV','SUV','هيونداي توسان أو مشابه','Hyundai Tucson or similar',245],['exec','سيدان تنفيذية','Executive sedan','مرسيدس E-Class أو مشابه','Mercedes E-Class or similar',620],['lux','فاخرة','Luxury','مرسيدس S-Class أو مشابه','Mercedes S-Class or similar',1150],['van','عائلية · 7 مقاعد','Family · 7 seats','جي إم سي يوكن أو مشابه','GMC Yukon or similar',540]];
 const CC=[['CC-101','المبيعات','Sales'],['CC-204','تطوير الأعمال','Business development'],['CC-310','العمليات','Operations'],['CC-415','تقنية المعلومات','IT'],['CC-520','المالية','Finance'],['CC-630','الموارد البشرية','Human resources']];
-const PUR=[['client','اجتماع عميل','Client meeting','🤝'],['conf','مؤتمر أو معرض','Conference or exhibition','🎤'],['train','تدريب أو ورشة عمل','Training or workshop','📚'],['site','زيارة موقع مشروع','Project site visit','🏗️'],['internal','اجتماع داخلي','Internal meeting','🏢'],['recruit','توظيف ومقابلات','Recruitment','🧑‍💼'],['sales','زيارة مبيعات','Sales visit','📈'],['other','أخرى','Other','✏️']];
+const PUR=[['client','اجتماع عميل','Client meeting','ic-users'],['conf','مؤتمر أو معرض','Conference or exhibition','ic-board'],['train','تدريب أو ورشة عمل','Training or workshop','ic-book'],['site','زيارة موقع مشروع','Project site visit','ic-site'],['internal','اجتماع داخلي','Internal meeting','ic-building'],['recruit','توظيف ومقابلات','Recruitment','ic-idcard'],['sales','زيارة مبيعات','Sales visit','ic-chart'],['other','أخرى','Other','ic-pen']];
 const STAFF=[['سارة العتيبي','Sara Alotaibi'],['نواف خالد','Nawaf Khalid'],['عبدالله الشهري','Abdullah Alshehri'],['ريم القحطاني','Reem Alqahtani'],['فيصل الدوسري','Faisal Aldosari'],['لمى الحربي','Lama Alharbi'],['محمد الغامدي','Mohammed Alghamdi'],['هيا المطيري','Haya Almutairi']];
+window.ST=null;
 const COLS=['#429f42','#1c5a26','#fda204','#0e3317','#7a5c2e','#2b6f8f'];
 const ini=n=>n.split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();
 /* field renderers */
@@ -1646,7 +1664,7 @@ function calendar(f,o){let a=o.a,b=o.range?o.b:null,stage=0,view=new Date(a.getF
  draw()}
 /* option list */
 function options(f,o){const draw=(q='')=>{const n=norm(q);const list=o.items.filter(it=>!n||norm(it.a).includes(n)||norm(it.e).includes(n));
-  pkOpen(f,head(o.tA,o.tE,o.sA,o.sE)+(o.search?`<div class="pksrch"><svg class="i"><use href="#ic-search"/></svg><input placeholder="${lang==='ar'?'ابحث…':'Search…'}" value="${q}"></div>`:'')+`<div class="opl">${list.map(it=>`<button data-k="${it.k}" aria-selected="${it.k===o.cur()}"><span class="oi">${it.ic||''}</span><span class="ot"><b>${BI(it.a,it.e)}</b>${it.sa?`<small>${BI(it.sa,it.se)}</small>`:''}</span><span class="ck2"></span></button>`).join('')}</div>`+(o.extra?o.extra():''),mob()?null:(o.w||320));
+  pkOpen(f,head(o.tA,o.tE,o.sA,o.sE)+(o.search?`<div class="pksrch"><svg class="i"><use href="#ic-search"/></svg><input placeholder="${lang==='ar'?'ابحث…':'Search…'}" value="${q}"></div>`:'')+`<div class="opl">${list.map(it=>`<button data-k="${it.k}" aria-selected="${it.k===o.cur()}"><span class="oi${it.wide?' car':''}">${it.ic||''}</span><span class="ot"><b>${BI(it.a,it.e)}</b>${it.sa?`<small>${BI(it.sa,it.se)}</small>`:''}</span><span class="ck2"></span></button>`).join('')}</div>`+(o.extra?o.extra():''),mob()?null:(o.w||320));
   if(o.search){const inp=PK.querySelector('.pksrch input');inp.oninput=()=>{const v=inp.value;draw(v);const ni=PK.querySelector('.pksrch input');ni.focus();ni.setSelectionRange(v.length,v.length)}}
   $$('.opl button',PK).forEach(b=>b.onclick=()=>{o.set(b.dataset.k);renderFields();if(o.keepOpen&&o.keepOpen(b.dataset.k)){draw(q);return}pkClose()});
   o.after&&o.after(draw)};draw()}
@@ -1673,12 +1691,12 @@ const OPEN={
  idates:f=>calendar(f,{range:true,a:ST.ins.a,b:ST.ins.b,tA:'مدة الرحلة',tE:'Trip dates',endA:'العودة',endE:'return',unit:n=>unitD(n+1),done:(a,b)=>{ST.ins.a=a;ST.ins.b=b}}),
  hrooms:f=>steppers(f,{tA:'الغرف والضيوف',tE:'Rooms and guests',rows:[{a:'الغرف',e:'Rooms',sa:'حتى 5 غرف',se:'Up to 5',min:1,max:5,get:()=>ST.ht.rooms,set:v=>ST.ht.rooms=v},{a:'بالغون',e:'Adults',sa:'12 سنة وأكثر',se:'12+',min:1,max:10,get:()=>ST.ht.ad,set:v=>ST.ht.ad=v},{a:'أطفال',e:'Children',sa:'حتى 11 سنة',se:'0–11',min:0,max:6,get:()=>ST.ht.ch,set:v=>ST.ht.ch=v}],fix:()=>{if(ST.ht.ad<ST.ht.rooms)ST.ht.ad=ST.ht.rooms},sum:()=>F('hrooms').querySelector('.v .'+lang).textContent}),
  itrav:f=>steppers(f,{tA:'المسافرون',tE:'Travellers',rows:[{a:'بالغون',e:'Adults',sa:'18–64 سنة',se:'18–64',min:0,max:9,get:()=>ST.ins.ad,set:v=>ST.ins.ad=v},{a:'أطفال',e:'Children',sa:'حتى 17 سنة',se:'0–17',min:0,max:9,get:()=>ST.ins.ch,set:v=>ST.ins.ch=v},{a:'كبار السن',e:'Seniors',sa:'65 سنة وأكثر',se:'65+',min:0,max:9,get:()=>ST.ins.sr,set:v=>ST.ins.sr=v}],fix:()=>{if(ST.ins.ad+ST.ins.ch+ST.ins.sr<1)ST.ins.ad=1},sum:()=>F('itrav').querySelector('.v .'+lang).textContent}),
- vnat:f=>options(f,{tA:'الجنسية',tE:'Nationality',search:true,items:NAT.map(n=>({k:n[0],a:n[1],e:n[2],ic:n[3]})),cur:()=>ST.vs.nat,set:k=>ST.vs.nat=k}),
- ccat:f=>options(f,{tA:'فئة السيارة',tE:'Car category',w:380,items:CAT.map(c=>({k:c[0],a:c[1],e:c[2],sa:c[3]+' · من '+c[5]+' ر.س/يوم',se:c[4]+' · from SAR '+c[5]+'/day',ic:'<svg class="i"><use href="#ic-car"/></svg>'})),cur:()=>ST.car.cat,set:k=>ST.car.cat=k,keepOpen:()=>true,
+ vnat:f=>options(f,{tA:'الجنسية',tE:'Nationality',search:true,items:NAT.map(n=>({k:n[0],a:n[1],e:n[2],ic:`<em class="cc2">${n[0].toUpperCase()}</em>`})),cur:()=>ST.vs.nat,set:k=>ST.vs.nat=k}),
+ ccat:f=>options(f,{tA:'فئة السيارة',tE:'Car category',w:400,items:CAT.map(c=>({k:c[0],a:c[1],e:c[2],sa:c[3]+'<br>من <span class="num">'+c[5]+'</span> ر.س لليوم',se:c[4]+'<br>from SAR <span class="num">'+c[5]+'</span> per day',ic:`<svg class="i"><use href="#ic-car"/></svg><img src="i/car-${c[0]}.webp" alt="" onerror="this.remove()">`,wide:1})),cur:()=>ST.car.cat,set:k=>ST.car.cat=k,keepOpen:()=>true,
   extra:()=>`<div class="tgl"><span>${BI('مع سائق خاص','With a chauffeur')}<small>${BI('+180 ر.س لليوم','+SAR 180 per day')}</small></span><button class="sw2" role="switch" aria-checked="${ST.car.drv}"></button></div><div class="calf"><span></span><button class="pkok">${BI('تم','Done')}</button></div>`,
   after:draw=>{PK.querySelector('.sw2').onclick=()=>{ST.car.drv=!ST.car.drv;renderFields();draw()};PK.querySelector('.pkok').onclick=pkClose}}),
  ccc:f=>options(f,{tA:'مركز التكلفة',tE:'Cost centre',sA:'تظهر التكلفة في تقرير هذا القسم',sE:'Costs are reported to this department',items:CC.map(c=>({k:c[0],a:c[0]+' · '+c[1],e:c[0]+' · '+c[2],ic:'<svg class="i"><use href="#ic-brief"/></svg>'})),cur:()=>ST.corp.cc,set:k=>ST.corp.cc=k}),
- cpur:f=>options(f,{tA:'غرض الرحلة',tE:'Trip purpose',sA:'يُستخدم في الموافقات والتقارير',sE:'Used for approvals and reports',w:360,items:PUR.map(p=>({k:p[0],a:p[1],e:p[2],ic:p[3]})),cur:()=>ST.corp.pur,set:k=>ST.corp.pur=k,keepOpen:k=>k==='other',
+ cpur:f=>options(f,{tA:'غرض الرحلة',tE:'Trip purpose',sA:'يُستخدم في الموافقات والتقارير',sE:'Used for approvals and reports',w:360,items:PUR.map(p=>({k:p[0],a:p[1],e:p[2],ic:`<svg class="i"><use href="#${p[3]}"/></svg>`})),cur:()=>ST.corp.pur,set:k=>ST.corp.pur=k,keepOpen:k=>k==='other',
   extra:()=>`<div class="pkother ${ST.corp.pur==='other'?'on':''}"><input placeholder="${lang==='ar'?'اكتب غرض الرحلة':'Describe the purpose'}" value="${ST.corp.purTxt.replace(/"/g,'&quot;')}"><button class="pkok">${BI('تم','Done')}</button></div>`,
   after:()=>{const w=PK.querySelector('.pkother');if(w.classList.contains('on')){const i=w.querySelector('input');setTimeout(()=>i.focus(),50);const sv=()=>{ST.corp.purTxt=i.value.trim();renderFields();pkClose()};w.querySelector('button').onclick=sv;i.onkeydown=e=>{if(e.key==='Enter')sv()}}}}),
  ctrav:travellers};
@@ -1693,6 +1711,7 @@ $$('[data-d],[data-c]').forEach(b=>b.addEventListener('click',buildNames));$('#p
 const _sl=setLang;
 $('#langBtn').addEventListener('click',()=>{renderFields();buildNames();if(pkF)pkClose()});
 renderFields();buildNames();
+window.ST=ST;window.CAT=CAT;
 
 /* ===== brand search loader ===== */
 const SL=document.createElement('div');SL.className='sld';SL.setAttribute('aria-live','polite');document.body.appendChild(SL);
