@@ -561,6 +561,128 @@ html[dir=rtl] .rc2 .tm{flex-direction:row-reverse}
 .emp{text-align:center;color:var(--muted);padding:40px 0}
 @media (max-width:760px){.rc2{flex-wrap:wrap}.rc2 .pp{flex-direction:row;align-items:center;gap:10px;width:100%;justify-content:space-between;border-top:1px dashed rgba(13,34,19,.12);padding-top:10px}.rc2 .pp .sel{margin:0}.rsh h3{font-size:21px}}
 
+/* ============ PICKERS ============ */
+.f.fpk{cursor:pointer}
+.f.fpk:hover,.f.fpk.act{background:rgba(66,159,66,.06)}
+.f.fpk.act{box-shadow:inset 0 0 0 2px var(--g)!important}
+.pkx{position:fixed;z-index:121;background:#fff;color:var(--ink);border-radius:22px;padding:14px;box-shadow:0 0 0 1px rgba(13,34,19,.07),0 34px 70px -24px rgba(8,34,17,.5);opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .16s,transform .22s cubic-bezier(.3,.9,.3,1);max-height:min(560px,calc(100vh - 24px));overflow-y:auto}
+.pkx.open{opacity:1;transform:none;pointer-events:auto}
+.pkh{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px 10px}
+.pkh b{font-size:15px}.pkh small{display:block;font-size:12px;color:var(--muted)}
+.pkh .x{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--mist);flex:none}.pkh .x svg{width:14px;height:14px}
+.pkgrip{display:none}
+/* calendar */
+.cal{display:flex;gap:22px}
+.calm{flex:1;min-width:252px}
+.calt{display:flex;align-items:center;justify-content:center;height:36px;font-weight:800;font-size:15px;position:relative}
+.caln{position:absolute;top:0;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--mist)}
+.caln svg{width:15px;height:15px}.caln.p{inset-inline-start:0}.caln.n{inset-inline-end:0}
+html[dir=rtl] .caln.n svg,html[dir=ltr] .caln.p svg{transform:scaleX(-1)}
+.calw,.cald{display:grid;grid-template-columns:repeat(7,1fr)}
+.calw span{font-size:11.5px;color:var(--muted);text-align:center;padding:8px 0 4px;font-weight:700}
+.cald button{height:38px;font-size:14px;font-weight:600;position:relative;border-radius:0;color:var(--ink)}
+.cald button i{position:relative;z-index:1;font-style:normal;display:grid;place-items:center;width:36px;height:36px;margin:auto;border-radius:50%;transition:background .15s}
+.cald button:not(:disabled):hover i{background:var(--mist2)}
+.cald button:disabled{color:rgba(13,34,19,.25);cursor:default}
+.cald button.td i{box-shadow:inset 0 0 0 1.5px rgba(13,34,19,.25)}
+.cald button.in{background:rgba(66,159,66,.13)}
+.cald button.s,.cald button.e{background:linear-gradient(var(--dir1),transparent 50%,rgba(66,159,66,.13) 50%)}
+html[dir=ltr] .cald button.s{--dir1:90deg}html[dir=rtl] .cald button.s{--dir1:270deg}
+html[dir=ltr] .cald button.e{--dir1:270deg}html[dir=rtl] .cald button.e{--dir1:90deg}
+.cald button.s.e{background:none}
+.cald button.s i,.cald button.e i{background:var(--ink)!important;color:#fff}
+.calf{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);margin-top:10px;padding:12px 4px 2px}
+.calf span{font-size:13.5px;font-weight:700}.calf small{color:var(--muted);font-weight:500}
+.pkok{height:42px;padding:0 22px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;flex:none}
+.pkok:disabled{opacity:.35}
+/* option lists */
+.opl{display:grid;gap:4px}
+.opl button{display:flex;align-items:center;gap:12px;width:100%;padding:10px;border-radius:14px;text-align:start;transition:background .15s}
+.opl button:hover{background:var(--mist)}
+.opl button .oi{width:38px;height:38px;border-radius:12px;background:var(--mist2);color:var(--g8);display:grid;place-items:center;flex:none;font-size:18px}
+.opl button .oi svg{width:18px;height:18px}
+.opl button .ot{flex:1;min-width:0}.opl b{display:block;font-size:14.5px}.opl small{display:block;font-size:12px;color:var(--muted)}
+.opl button .ck2{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1.5px rgba(13,34,19,.2);flex:none;display:grid;place-items:center}
+.opl button[aria-selected=true]{background:rgba(66,159,66,.09)}
+.opl button[aria-selected=true] .ck2{background:var(--g);box-shadow:none}
+.opl button[aria-selected=true] .ck2::after{content:"";width:6px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
+.pksrch{display:flex;align-items:center;gap:8px;background:var(--mist);border-radius:12px;padding:0 12px;margin-bottom:8px}
+.pksrch svg{width:16px;height:16px;color:var(--muted)}
+.pksrch input{flex:1;border:0;outline:0;background:none;height:40px;font-size:14.5px;min-width:0}
+.pkother{display:none;margin-top:6px}.pkother.on{display:flex;gap:8px}
+.pkother input,.tvin input,.pnames input{flex:1;min-width:0;height:44px;border-radius:12px;border:0;outline:0;background:var(--mist);padding:0 12px;font-size:14.5px}
+.pkother input:focus,.tvin input:focus,.pnames input:focus{box-shadow:inset 0 0 0 2px var(--g);background:#fff}
+.tgl{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 10px 4px;border-top:1px solid var(--line);margin-top:8px;font-size:14px;font-weight:600}
+.tgl small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+.sw2{width:46px;height:28px;border-radius:999px;background:rgba(13,34,19,.15);position:relative;flex:none;transition:background .2s}
+.sw2::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.2);transition:inset-inline-start .2s}
+.sw2[aria-checked=true]{background:var(--g)}.sw2[aria-checked=true]::after{inset-inline-start:21px}
+/* steppers inside picker */
+.pkx .stp{padding:10px 6px}
+/* traveller chips editor */
+.tvc{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tvc span{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 6px 0 10px;border-radius:999px;background:var(--mist2);font-size:13.5px;font-weight:600}
+html[dir=rtl] .tvc span{padding:0 10px 0 6px}
+.tvc span i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:9.5px;font-weight:800;font-style:normal}
+.tvc span button{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:var(--muted)}
+.tvc span button svg{width:11px;height:11px}
+.tvin{display:flex;gap:8px;margin-bottom:10px}
+.tvin button{height:44px;padding:0 16px;border-radius:12px;background:var(--g);color:#fff;font-weight:700;flex:none}
+.pkl{font-size:12px;color:var(--muted);font-weight:700;padding:6px 6px 4px}
+/* pax names */
+.pnames{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);display:grid;gap:8px}
+.pnames .pkl{padding:0}
+.pnames label{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.pnames label em{font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--mist2);display:grid;place-items:center;font-weight:800;color:var(--g8);flex:none}
+.pop{max-height:min(520px,70vh);overflow-y:auto}
+@media (max-width:760px){
+  .pkx{left:0!important;right:0!important;top:auto!important;bottom:0;width:auto!important;border-radius:26px 26px 0 0;padding:10px 16px calc(18px + env(safe-area-inset-bottom));transform:translateY(100%);transition:transform .35s cubic-bezier(.3,.9,.3,1),opacity .2s;max-height:86svh}
+  .pkx.open{transform:none}
+  .pkgrip{display:block;width:44px;height:5px;border-radius:5px;background:rgba(13,34,19,.15);margin:0 auto 10px}
+  .cal{flex-direction:column}.calm:nth-child(2){display:none}.calm{min-width:0}
+  .cald button{height:44px}.cald button i{width:40px;height:40px}
+  .pkbd{position:fixed;inset:0;z-index:120;background:rgba(5,20,10,.4);opacity:0;pointer-events:none;transition:opacity .25s}
+  .pkbd.on{opacity:1;pointer-events:auto}
+}
+/* ============ SEARCH LOADER (brand) ============ */
+.sld{position:fixed;inset:0;z-index:135;display:grid;place-items:center;background:var(--g10);color:#fff;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;overflow:hidden}
+.sld.on{opacity:1;visibility:visible}
+.sld::after{content:"";position:absolute;inset:0;background-image:var(--noise);opacity:.3;mix-blend-mode:overlay;pointer-events:none}
+.sld .glow{position:absolute;width:70vmax;height:70vmax;border-radius:50%;background:radial-gradient(circle,rgba(66,159,66,.35),transparent 60%);top:50%;left:50%;transform:translate(-50%,-55%)}
+.sldin{position:relative;z-index:1;width:min(560px,90vw);text-align:center}
+.emb{width:84px;height:84px;margin:0 auto;border-radius:50%;background:#fff;display:grid;place-items:center;position:relative;box-shadow:0 20px 40px -14px rgba(0,0,0,.6)}
+.emb svg{width:64px;height:64px}
+.emb::before,.emb::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:1.5px solid rgba(127,208,124,.55);animation:sring 1.8s cubic-bezier(.2,.6,.3,1) infinite}
+.emb::after{animation-delay:.9s}
+@keyframes sring{0%{transform:scale(.85);opacity:1}100%{transform:scale(1.9);opacity:0}}
+.sld .emb{animation:embIn .6s cubic-bezier(.3,1.4,.4,1) both}
+@keyframes embIn{from{transform:scale(.4);opacity:0}}
+.sroute{position:relative;margin:34px auto 0;height:150px;direction:ltr}
+.sroute svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.sroute .base{fill:none;stroke:rgba(255,255,255,.18);stroke-width:2;stroke-dasharray:2 8;stroke-linecap:round}
+.sroute .draw{fill:none;stroke:var(--amber);stroke-width:2.5;stroke-linecap:round}
+.sroute .pt{fill:var(--g10);stroke:#fff;stroke-width:2.5}
+.sroute .pt.b{stroke:var(--amber)}
+.sroute .pl{color:#fff}
+.rlab{position:absolute;top:calc(80% + 16px);display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12.5px;color:rgba(255,255,255,.7);transform:translateX(-50%)}
+.pl2{position:absolute;left:0;top:0;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.5);will-change:transform}
+.pl2 svg{width:22px;height:22px;color:var(--g10);stroke-width:2}
+.rlab b{font-size:26px;color:#fff;letter-spacing:.06em;line-height:1}
+.rlab.a{left:5%}.rlab.b{left:95%}
+.sicon{width:96px;height:96px;margin:30px auto 0;border-radius:28px;background:rgba(255,255,255,.08);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.sicon svg{width:42px;height:42px;color:var(--amber);animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.sld h4{font-size:26px;margin-top:34px;line-height:1.35}
+.sroute+h4{margin-top:78px}
+.sld .stx{height:24px;margin-top:8px;font-size:15px;color:rgba(255,255,255,.72);position:relative;overflow:hidden}
+.sld .stx span{position:absolute;inset:0;animation:stx .5s cubic-bezier(.3,.9,.3,1) both}
+@keyframes stx{from{transform:translateY(100%);opacity:0}}
+.sbar{width:220px;height:4px;border-radius:4px;background:rgba(255,255,255,.12);margin:22px auto 0;overflow:hidden}
+.sbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g),var(--amber));border-radius:4px}
+.sld.on .sbar i{animation:sbar var(--sd,2s) cubic-bezier(.5,0,.3,1) forwards}
+@keyframes sbar{to{width:100%}}
+@media (max-width:760px){.sld h4{font-size:22px}.rlab b{font-size:21px}.sroute{height:120px}}
+
 /* ============ COUNTDOWN on stamps ============ */
 .cd{position:absolute;left:6px;right:6px;top:calc(100% + 16px);z-index:6;padding:10px 14px 12px;border-radius:16px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 10px 24px -14px rgba(8,34,17,.35),0 0 0 1px rgba(13,34,19,.06);overflow:hidden}
 .cdl{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:700;color:var(--muted);letter-spacing:.02em}
@@ -913,9 +1035,9 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
       </div>
       <div class="cbody">
         <div class="corpbar corp-only">
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-users"/></svg></span><div style="min-width:0;flex:1"><label><span class="ar">المسافرون</span><span class="en">Travellers</span></label><div class="v" style="display:flex;gap:10px;align-items:center"><span class="trav"><span style="background:#429f42">SA</span><span style="background:#1c5a26">NK</span></span><span class="ar">سارة العتيبي، نواف خالد</span><span class="en">Sara Alotaibi, Nawaf Khalid</span></div></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-brief"/></svg></span><div><label><span class="ar">مركز التكلفة</span><span class="en">Cost centre</span></label><div class="v">CC-204</div></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-flag"/></svg></span><div><label><span class="ar">غرض الرحلة</span><span class="en">Purpose</span></label><div class="v"><span class="ar">اجتماع عميل</span><span class="en">Client meeting</span></div></div></div>
+          <div class="f fpk" data-pk="ctrav" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-users"/></svg></span><div style="min-width:0;flex:1"><label><span class="ar">المسافرون</span><span class="en">Travellers</span></label><div class="v" style="display:flex;gap:10px;align-items:center"><span class="trav"><span style="background:#429f42">SA</span><span style="background:#1c5a26">NK</span></span><span class="ar">سارة العتيبي، نواف خالد</span><span class="en">Sara Alotaibi, Nawaf Khalid</span></div></div></div>
+          <div class="f fpk" data-pk="ccc" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-brief"/></svg></span><div><label><span class="ar">مركز التكلفة</span><span class="en">Cost centre</span></label><div class="v">CC-204</div></div></div>
+          <div class="f fpk" data-pk="cpur" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-flag"/></svg></span><div><label><span class="ar">غرض الرحلة</span><span class="en">Purpose</span></label><div class="v"><span class="ar">اجتماع عميل</span><span class="en">Client meeting</span></div></div></div>
         </div>
         <div class="crow" data-for="flight combo">
           <button class="chip" aria-pressed="true" data-trip="rt"><span class="ar">ذهاب وعودة</span><span class="en">Round trip</span></button>
@@ -931,38 +1053,39 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
             <button class="swap" id="swap" aria-label="swap"><svg class="i"><use href="#ic-swap"/></svg></button>
             <div class="f"><span class="fi"><svg class="i"><use href="#ic-arr"/></svg></span><div style="min-width:0;flex:1"><label><span class="ar">إلى</span><span class="en">To</span></label><input id="to" data-ph-ar="إلى أين؟" data-ph-en="Where to?" aria-label="to"><div class="s" id="toS"><span class="ar">مدينة أو مطار</span><span class="en">City or airport</span></div></div></div>
           </div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div style="min-width:0"><label><span class="ar">المغادرة ← العودة</span><span class="en">Depart → Return</span></label><div class="v num"><span class="ar">14 أكت ← 15 أكت</span><span class="en">14 Oct → 15 Oct</span></div><div class="s"><span class="ar">الأربعاء · الخميس</span><span class="en">Wed · Thu</span></div></div></div>
+          <div class="f fpk" data-pk="fdates" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div style="min-width:0"><label><span class="ar">المغادرة ← العودة</span><span class="en">Depart → Return</span></label><div class="v num"><span class="ar">14 أكت ← 15 أكت</span><span class="en">14 Oct → 15 Oct</span></div><div class="s"><span class="ar">الأربعاء · الخميس</span><span class="en">Wed · Thu</span></div></div></div>
           <div class="f" id="paxF" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-user"/></svg></span><div style="min-width:0"><label><span class="ar">المسافرون والدرجة</span><span class="en">Travellers & class</span></label><div class="v"><span class="num" id="paxN">1</span> <span class="ar">مسافر</span><span class="en">traveller</span></div><div class="s" id="clsS"><span class="ar">سياحية</span><span class="en">Economy</span></div></div>
             <div class="pop" id="pop">
               <div class="stp"><span><span class="ar">بالغون</span><span class="en">Adults</span><small>12+</small></span><span class="ctr"><button data-d="-1">−</button><b class="num" id="ad">1</b><button data-d="1">+</button></span></div>
               <div class="stp"><span><span class="ar">أطفال</span><span class="en">Children</span><small>2–11</small></span><span class="ctr"><button data-c="-1">−</button><b class="num" id="ch">0</b><button data-c="1">+</button></span></div>
               <div class="cls"><button class="chip" aria-pressed="true" data-cls="0"><span class="ar">سياحية</span><span class="en">Economy</span></button><button class="chip" aria-pressed="false" data-cls="1"><span class="ar">أعمال</span><span class="en">Business</span></button><button class="chip" aria-pressed="false" data-cls="2"><span class="ar">أولى</span><span class="en">First</span></button></div>
+              <div class="pnames" id="pnames"></div>
             </div>
           </div>
           <button class="go" id="go"><svg class="i"><use href="#ic-search"/></svg><span class="ar">ابحث عن رحلات</span><span class="en">Search flights</span></button>
         </div>
         <div class="fields three" data-for="hotel" hidden>
           <div class="f"><span class="fi"><svg class="i"><use href="#ic-pin"/></svg></span><div style="flex:1;min-width:0"><label><span class="ar">المدينة أو الفندق</span><span class="en">City or hotel</span></label><input data-ph-ar="مثال: جدة، الكورنيش" data-ph-en="e.g. Jeddah, Corniche" aria-label="hotel"></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div><label><span class="ar">الوصول ← المغادرة</span><span class="en">Check-in → out</span></label><div class="v num"><span class="ar">14 أكت ← 16 أكت</span><span class="en">14 Oct → 16 Oct</span></div></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-bed"/></svg></span><div><label><span class="ar">الغرف والضيوف</span><span class="en">Rooms & guests</span></label><div class="v"><span class="ar">غرفة · ضيف</span><span class="en">1 room · 1 guest</span></div></div></div>
+          <div class="f fpk" data-pk="hdates" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div><label><span class="ar">الوصول ← المغادرة</span><span class="en">Check-in → out</span></label><div class="v num"><span class="ar">14 أكت ← 16 أكت</span><span class="en">14 Oct → 16 Oct</span></div></div></div>
+          <div class="f fpk" data-pk="hrooms" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-bed"/></svg></span><div><label><span class="ar">الغرف والضيوف</span><span class="en">Rooms & guests</span></label><div class="v"><span class="ar">غرفة · ضيف</span><span class="en">1 room · 1 guest</span></div></div></div>
           <button class="go"><svg class="i"><use href="#ic-search"/></svg><span class="ar">ابحث عن فنادق</span><span class="en">Search hotels</span></button>
         </div>
         <div class="fields three" data-for="visa" hidden>
           <div class="f"><span class="fi"><svg class="i"><use href="#ic-pin"/></svg></span><div style="flex:1;min-width:0"><label><span class="ar">الدولة المقصودة</span><span class="en">Destination country</span></label><input data-ph-ar="مثال: المملكة المتحدة" data-ph-en="e.g. United Kingdom" aria-label="country"></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-passport"/></svg></span><div><label><span class="ar">الجنسية</span><span class="en">Nationality</span></label><div class="v"><span class="ar">سعودي</span><span class="en">Saudi</span></div></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div><label><span class="ar">تاريخ السفر</span><span class="en">Travel date</span></label><div class="v num"><span class="ar">14 أكت</span><span class="en">14 Oct</span></div></div></div>
+          <div class="f fpk" data-pk="vnat" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-passport"/></svg></span><div><label><span class="ar">الجنسية</span><span class="en">Nationality</span></label><div class="v"><span class="ar">سعودي</span><span class="en">Saudi</span></div></div></div>
+          <div class="f fpk" data-pk="vdate" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div><label><span class="ar">تاريخ السفر</span><span class="en">Travel date</span></label><div class="v num"><span class="ar">14 أكت</span><span class="en">14 Oct</span></div></div></div>
           <button class="go"><svg class="i"><use href="#ic-search"/></svg><span class="ar">تحقق من المتطلبات</span><span class="en">Check requirements</span></button>
         </div>
         <div class="fields three" data-for="car" hidden>
           <div class="f"><span class="fi"><svg class="i"><use href="#ic-pin"/></svg></span><div style="flex:1;min-width:0"><label><span class="ar">موقع الاستلام</span><span class="en">Pick-up</span></label><input data-ph-ar="مطار أو مدينة" data-ph-en="Airport or city" aria-label="pickup"></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div><label><span class="ar">الاستلام ← التسليم</span><span class="en">Pick-up → Drop-off</span></label><div class="v num"><span class="ar">14 أكت ← 16 أكت</span><span class="en">14 Oct → 16 Oct</span></div></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-car"/></svg></span><div><label><span class="ar">الفئة</span><span class="en">Category</span></label><div class="v"><span class="ar">سيدان تنفيذية</span><span class="en">Executive sedan</span></div></div></div>
+          <div class="f fpk" data-pk="cdates" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div><label><span class="ar">الاستلام ← التسليم</span><span class="en">Pick-up → Drop-off</span></label><div class="v num"><span class="ar">14 أكت ← 16 أكت</span><span class="en">14 Oct → 16 Oct</span></div></div></div>
+          <div class="f fpk" data-pk="ccat" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-car"/></svg></span><div><label><span class="ar">الفئة</span><span class="en">Category</span></label><div class="v"><span class="ar">سيدان تنفيذية</span><span class="en">Executive sedan</span></div></div></div>
           <button class="go"><svg class="i"><use href="#ic-search"/></svg><span class="ar">ابحث عن سيارات</span><span class="en">Search cars</span></button>
         </div>
         <div class="fields three" data-for="ins" hidden>
           <div class="f"><span class="fi"><svg class="i"><use href="#ic-pin"/></svg></span><div style="flex:1;min-width:0"><label><span class="ar">الوجهة</span><span class="en">Destination</span></label><input data-ph-ar="دولة أو منطقة" data-ph-en="Country or region" aria-label="destination"></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div><label><span class="ar">مدة الرحلة</span><span class="en">Trip dates</span></label><div class="v num"><span class="ar">14 ← 15 أكت</span><span class="en">14 → 15 Oct</span></div></div></div>
-          <div class="f"><span class="fi"><svg class="i"><use href="#ic-user"/></svg></span><div><label><span class="ar">المسافرون</span><span class="en">Travellers</span></label><div class="v"><span class="ar">مسافر واحد</span><span class="en">1 traveller</span></div></div></div>
+          <div class="f fpk" data-pk="idates" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-cal"/></svg></span><div><label><span class="ar">مدة الرحلة</span><span class="en">Trip dates</span></label><div class="v num"><span class="ar">14 ← 15 أكت</span><span class="en">14 → 15 Oct</span></div></div></div>
+          <div class="f fpk" data-pk="itrav" tabindex="0"><span class="fi"><svg class="i"><use href="#ic-user"/></svg></span><div><label><span class="ar">المسافرون</span><span class="en">Travellers</span></label><div class="v"><span class="ar">مسافر واحد</span><span class="en">1 traveller</span></div></div></div>
           <button class="go"><svg class="i"><use href="#ic-search"/></svg><span class="ar">احصل على عرض</span><span class="en">Get a quote</span></button>
         </div>
         <div class="adv" id="adv"><div><div class="advin">
@@ -1472,6 +1595,149 @@ function doSearch(kind){const A=lang==='ar';
   return openRS({kind:'other',title:A?`تأمين السفر إلى ${co.ar}`:`Insurance for ${co.en}`,sub:A?'مسافر واحد · يومان':'1 traveller · 2 days',html:pl.map(x=>`<article class="rc2 h"><div class="hi"><svg class="i"><use href="#ic-shield"/></svg></div><div class="fl"><b class="hn">${A?x[0]:x[1]}</b><div class="mt"><span>${x[2]}</span></div></div><div class="pp"><b class="num">${SAR(x[3])}</b><small>${A?'للمسافر':'per traveller'}</small><button class="sel">${A?'اختر':'Select'}</button></div></article>`).join('')})}}
 $$('.console .go').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();const k=b.closest('[data-for]').dataset.for.split(' ');const cur=$('.svc [role=tab][aria-selected=true]').dataset.tab;doSearch(k.includes(cur)?cur:k[0])}));
 
+{
+/* ===== pickers: dates, options, travellers ===== */
+const MA=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'],ME=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],MEF=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const WA=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],WE=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],WA1=['ح','ن','ث','ر','خ','ج','س'],WE1=['S','M','T','W','T','F','S'];
+const D0=new Date();D0.setHours(0,0,0,0);const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};const same=(a,b)=>a&&b&&a.getTime()===b.getTime();const nights=(a,b)=>Math.round((b-a)/864e5);
+const dA=d=>`${d.getDate()} ${MA[d.getMonth()]}`,dE=d=>`${d.getDate()} ${ME[d.getMonth()]}`;
+const BI=(a,e)=>`<span class="ar">${a}</span><span class="en">${e}</span>`;
+const ST={trip:'rt',fl:{a:addD(D0,7),b:addD(D0,10)},ht:{a:addD(D0,7),b:addD(D0,9),rooms:1,ad:2,ch:0},vs:{a:addD(D0,14),nat:'sa'},car:{a:addD(D0,7),b:addD(D0,9),cat:'sedan',drv:false},ins:{a:addD(D0,7),b:addD(D0,14),ad:1,ch:0,sr:0},
+ corp:{trav:[['سارة العتيبي','Sara Alotaibi'],['نواف خالد','Nawaf Khalid']],cc:'CC-204',pur:'client',purTxt:''},names:[]};
+const NAT=[['sa','سعودي','Saudi','🇸🇦'],['ae','إماراتي','Emirati','🇦🇪'],['kw','كويتي','Kuwaiti','🇰🇼'],['bh','بحريني','Bahraini','🇧🇭'],['qa','قطري','Qatari','🇶🇦'],['om','عُماني','Omani','🇴🇲'],['eg','مصري','Egyptian','🇪🇬'],['jo','أردني','Jordanian','🇯🇴'],['lb','لبناني','Lebanese','🇱🇧'],['sy','سوري','Syrian','🇸🇾'],['ye','يمني','Yemeni','🇾🇪'],['sd','سوداني','Sudanese','🇸🇩'],['ma','مغربي','Moroccan','🇲🇦'],['tn','تونسي','Tunisian','🇹🇳'],['in','هندي','Indian','🇮🇳'],['pk','باكستاني','Pakistani','🇵🇰'],['ph','فلبيني','Filipino','🇵🇭'],['gb','بريطاني','British','🇬🇧'],['us','أمريكي','American','🇺🇸']];
+const CAT=[['eco','اقتصادية','Economy','هيونداي أكسنت أو مشابه','Hyundai Accent or similar',149],['sedan','سيدان','Sedan','تويوتا كامري أو مشابه','Toyota Camry or similar',189],['suv','SUV','SUV','هيونداي توسان أو مشابه','Hyundai Tucson or similar',245],['exec','سيدان تنفيذية','Executive sedan','مرسيدس E-Class أو مشابه','Mercedes E-Class or similar',620],['lux','فاخرة','Luxury','مرسيدس S-Class أو مشابه','Mercedes S-Class or similar',1150],['van','عائلية · 7 مقاعد','Family · 7 seats','جي إم سي يوكن أو مشابه','GMC Yukon or similar',540]];
+const CC=[['CC-101','المبيعات','Sales'],['CC-204','تطوير الأعمال','Business development'],['CC-310','العمليات','Operations'],['CC-415','تقنية المعلومات','IT'],['CC-520','المالية','Finance'],['CC-630','الموارد البشرية','Human resources']];
+const PUR=[['client','اجتماع عميل','Client meeting','🤝'],['conf','مؤتمر أو معرض','Conference or exhibition','🎤'],['train','تدريب أو ورشة عمل','Training or workshop','📚'],['site','زيارة موقع مشروع','Project site visit','🏗️'],['internal','اجتماع داخلي','Internal meeting','🏢'],['recruit','توظيف ومقابلات','Recruitment','🧑‍💼'],['sales','زيارة مبيعات','Sales visit','📈'],['other','أخرى','Other','✏️']];
+const STAFF=[['سارة العتيبي','Sara Alotaibi'],['نواف خالد','Nawaf Khalid'],['عبدالله الشهري','Abdullah Alshehri'],['ريم القحطاني','Reem Alqahtani'],['فيصل الدوسري','Faisal Aldosari'],['لمى الحربي','Lama Alharbi'],['محمد الغامدي','Mohammed Alghamdi'],['هيا المطيري','Haya Almutairi']];
+const COLS=['#429f42','#1c5a26','#fda204','#0e3317','#7a5c2e','#2b6f8f'];
+const ini=n=>n.split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+/* field renderers */
+const F=k=>$(`.f[data-pk=${k}]`);
+function setF(k,vA,vE,sA,sE){const f=F(k);if(!f)return;const v=f.querySelector('.v');v.innerHTML=BI(vA,vE);let s=f.querySelector('.s');if(sA!=null){if(!s){s=document.createElement('div');s.className='s';v.after(s)}s.innerHTML=BI(sA,sE)}}
+function rangeTxt(a,b){if(!b)return [dA(a),dE(a)];return [`${dA(a)} ← ${dA(b)}`,`${dE(a)} → ${dE(b)}`]}
+function renderFields(){
+ const fl=ST.fl,ow=ST.trip!=='rt';
+ const lab=F('fdates').querySelector('label');lab.innerHTML=ow?BI('المغادرة','Depart'):BI('المغادرة ← العودة','Depart → Return');
+ const r=rangeTxt(fl.a,ow?null:fl.b);setF('fdates',r[0],r[1],ow?WA[fl.a.getDay()]:`${WA[fl.a.getDay()]} · ${WA[fl.b.getDay()]}`,ow?WE[fl.a.getDay()]:`${WE[fl.a.getDay()]} · ${WE[fl.b.getDay()]}`);
+ const h=ST.ht,hn=nights(h.a,h.b);let r2=rangeTxt(h.a,h.b);setF('hdates',r2[0],r2[1],hn===1?'ليلة واحدة':hn===2?'ليلتان':`${hn} ليالٍ`,`${hn} night${hn>1?'s':''}`);
+ const g=h.ad+h.ch;setF('hrooms',`${h.rooms===1?'غرفة':h.rooms===2?'غرفتان':h.rooms+' غرف'} · ${g===1?'ضيف':g===2?'ضيفان':g+' ضيوف'}`,`${h.rooms} room${h.rooms>1?'s':''} · ${g} guest${g>1?'s':''}`);
+ const n=NAT.find(x=>x[0]===ST.vs.nat);setF('vnat',n[1],n[2]);setF('vdate',dA(ST.vs.a),dE(ST.vs.a),WA[ST.vs.a.getDay()],WE[ST.vs.a.getDay()]);
+ const c=ST.car,cn=nights(c.a,c.b);r2=rangeTxt(c.a,c.b);setF('cdates',r2[0],r2[1],cn===1?'يوم واحد':cn===2?'يومان':`${cn} أيام`,`${cn} day${cn>1?'s':''}`);
+ const ct=CAT.find(x=>x[0]===c.cat);setF('ccat',ct[1],ct[2],c.drv?'مع سائق':'بدون سائق',c.drv?'With chauffeur':'Self-drive');
+ const i=ST.ins,inn=nights(i.a,i.b)+1;r2=rangeTxt(i.a,i.b);setF('idates',r2[0],r2[1],`${inn} ${inn<=10&&inn>2?'أيام':'يوم'}`,`${inn} days`);
+ const it=i.ad+i.ch+i.sr;setF('itrav',it===1?'مسافر واحد':it===2?'مسافران':`${it} مسافرين`,`${it} traveller${it>1?'s':''}`);
+ const cf=F('ctrav');if(cf){const v=cf.querySelector('.v');const T=ST.corp.trav;v.innerHTML=T.length?`<span class="trav">${T.slice(0,4).map((t,k)=>`<span style="background:${COLS[k%COLS.length]}">${ini(t[1])}</span>`).join('')}</span><span class="ar">${T.map(t=>t[0]).join('، ')}</span><span class="en">${T.map(t=>t[1]).join(', ')}</span>`:BI('أضف المسافرين','Add travellers')}
+ const cc=CC.find(x=>x[0]===ST.corp.cc);setF('ccc',cc[0],cc[0],cc[1],cc[2]);
+ const p=PUR.find(x=>x[0]===ST.corp.pur);setF('cpur',p[0]==='other'&&ST.corp.purTxt?ST.corp.purTxt:p[1],p[0]==='other'&&ST.corp.purTxt?ST.corp.purTxt:p[2]);
+}
+/* popover shell */
+const PK=document.createElement('div');PK.className='pkx';PK.setAttribute('role','dialog');document.body.appendChild(PK);
+const PKB=document.createElement('div');PKB.className='pkbd';document.body.appendChild(PKB);
+let pkF=null;const mob=()=>innerWidth<=760;
+function pkPlace(){if(!pkF||mob())return;const r=pkF.getBoundingClientRect(),w=PK.offsetWidth,h=PK.offsetHeight;let top=r.bottom+8;if(top+h>innerHeight-12&&r.top-h-8>12)top=r.top-h-8;PK.style.top=Math.max(12,top)+'px';
+ if(top+h>innerHeight-12)top=innerHeight-12-h;let left=rtl()?r.right-w:r.left;left=Math.max(12,Math.min(innerWidth-12-w,left));PK.style.left=left+'px'}
+function pkOpen(f,html,w){if(pkF&&pkF!==f)pkF.classList.remove('act');pkF=f;f.classList.add('act');PK.style.width=w?w+'px':'';PK.innerHTML='<div class="pkgrip"></div>'+html;PK.classList.add('open');PKB.classList.add('on');if(!mob()){const r=f.getBoundingClientRect(),h=PK.offsetHeight,need=r.bottom+8+h-(innerHeight-12);if(need>0&&r.top-h-8<12)window.scrollBy(0,Math.min(need,r.top-90))}pkPlace();requestAnimationFrame(pkPlace);
+ const x=PK.querySelector('.pkh .x');if(x)x.onclick=pkClose}
+function pkClose(){PK.classList.remove('open');PKB.classList.remove('on');if(pkF)pkF.classList.remove('act');pkF=null}
+PKB.onclick=pkClose;
+document.addEventListener('mousedown',e=>{if(pkF&&!PK.contains(e.target)&&!pkF.contains(e.target))pkClose()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&pkF)pkClose()});addEventListener('resize',()=>pkF&&pkPlace());addEventListener('scroll',()=>{if(pkF&&!mob())pkPlace()},{passive:true});
+const head=(a,e,sa,se)=>`<div class="pkh"><div><b>${BI(a,e)}</b>${sa?`<small>${BI(sa,se)}</small>`:''}</div><button class="x" aria-label="close"><svg class="i"><use href="#ic-x"/></svg></button></div>`;
+/* calendar */
+function calendar(f,o){let a=o.a,b=o.range?o.b:null,stage=0,view=new Date(a.getFullYear(),a.getMonth(),1),hov=null;const min=o.min||D0,max=addD(D0,360);
+ const draw=()=>{const months=[view,new Date(view.getFullYear(),view.getMonth()+1,1)];
+  const mh=m=>{const first=m.getDay(),days=new Date(m.getFullYear(),m.getMonth()+1,0).getDate();let c='';for(let k=0;k<first;k++)c+='<span></span>';
+   for(let d=1;d<=days;d++){const x=new Date(m.getFullYear(),m.getMonth(),d);const dis=x<min||x>max;const end=b||(stage===1&&hov&&hov>a?hov:null);
+    let cl=[];if(same(x,D0))cl.push('td');if(same(x,a))cl.push('s');if(o.range&&end&&same(x,end))cl.push('e');if(!o.range&&same(x,a))cl.push('e');if(o.range&&end&&x>a&&x<end)cl.push('in');
+    c+=`<button data-t="${x.getTime()}" class="${cl.join(' ')}" ${dis?'disabled':''}><i class="num">${d}</i></button>`}
+   return c};
+  const cal=months.map((m,k)=>`<div class="calm"><div class="calt">${k===0?`<button class="caln p" aria-label="prev"><svg class="i"><use href="#ic-arrow"/></svg></button>`:''}${BI(MA[m.getMonth()]+' '+m.getFullYear(),MEF[m.getMonth()]+' '+m.getFullYear())}${(k===1||mob())?`<button class="caln n" aria-label="next"><svg class="i"><use href="#ic-arrow"/></svg></button>`:''}</div><div class="calw">${(lang==='ar'?WA1:WE1).map(w=>`<span>${w}</span>`).join('')}</div><div class="cald">${mh(m)}</div></div>`).join('');
+  const nn=b?nights(a,b):0;const sum=o.range?(b?`${rangeTxt(a,b)[lang==='ar'?0:1]} <small>· ${o.unit(nn)}</small>`:(lang==='ar'?'اختر تاريخ '+o.endA:'Pick '+o.endE)):`${(lang==='ar'?WA:WE)[a.getDay()]} ${lang==='ar'?dA(a):dE(a)}`;
+  pkOpen(f,head(o.tA,o.tE)+`<div class="cal">${cal}</div><div class="calf"><span>${sum}</span><button class="pkok" ${o.range&&!b?'disabled':''}>${BI('تم','Done')}</button></div>`,mob()?null:(innerWidth<640?320:600));
+  PK.querySelector('.caln.p').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1);if(view<new Date(D0.getFullYear(),D0.getMonth(),1))view=new Date(D0.getFullYear(),D0.getMonth(),1);draw()};
+  PK.querySelector('.caln.n').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);draw()};
+  $$('.cald button:not(:disabled)',PK).forEach(btn=>{const x=new Date(+btn.dataset.t);
+   btn.onclick=()=>{if(!o.range){a=x;o.done(a);renderFields();draw();setTimeout(pkClose,180);return}
+    if(stage===0||x<=a){a=x;b=null;stage=1;draw()}else{b=x;stage=0;o.done(a,b);renderFields();draw();setTimeout(pkClose,350)}};
+   btn.onmouseenter=()=>{if(o.range&&stage===1){hov=x;$$('.cald button',PK).forEach(z=>{const t=new Date(+z.dataset.t);z.classList.toggle('in',t>a&&t<hov);z.classList.toggle('e',same(t,hov)&&hov>a)})}}});
+  PK.querySelector('.pkok').onclick=()=>{if(o.range&&b)o.done(a,b);renderFields();pkClose()}};
+ draw()}
+/* option list */
+function options(f,o){const draw=(q='')=>{const n=norm(q);const list=o.items.filter(it=>!n||norm(it.a).includes(n)||norm(it.e).includes(n));
+  pkOpen(f,head(o.tA,o.tE,o.sA,o.sE)+(o.search?`<div class="pksrch"><svg class="i"><use href="#ic-search"/></svg><input placeholder="${lang==='ar'?'ابحث…':'Search…'}" value="${q}"></div>`:'')+`<div class="opl">${list.map(it=>`<button data-k="${it.k}" aria-selected="${it.k===o.cur()}"><span class="oi">${it.ic||''}</span><span class="ot"><b>${BI(it.a,it.e)}</b>${it.sa?`<small>${BI(it.sa,it.se)}</small>`:''}</span><span class="ck2"></span></button>`).join('')}</div>`+(o.extra?o.extra():''),mob()?null:(o.w||320));
+  if(o.search){const inp=PK.querySelector('.pksrch input');inp.oninput=()=>{const v=inp.value;draw(v);const ni=PK.querySelector('.pksrch input');ni.focus();ni.setSelectionRange(v.length,v.length)}}
+  $$('.opl button',PK).forEach(b=>b.onclick=()=>{o.set(b.dataset.k);renderFields();if(o.keepOpen&&o.keepOpen(b.dataset.k)){draw(q);return}pkClose()});
+  o.after&&o.after(draw)};draw()}
+/* steppers */
+function steppers(f,o){const draw=()=>{pkOpen(f,head(o.tA,o.tE)+o.rows.map((r,k)=>`<div class="stp"><span>${BI(r.a,r.e)}<small>${BI(r.sa,r.se)}</small></span><span class="ctr"><button data-k="${k}" data-v="-1" ${r.get()<=r.min?'disabled':''}>−</button><b class="num">${r.get()}</b><button data-k="${k}" data-v="1" ${r.get()>=r.max?'disabled':''}>+</button></span></div>`).join('')+`<div class="calf"><span>${o.sum()}</span><button class="pkok">${BI('تم','Done')}</button></div>`,mob()?null:320);
+  $$('.ctr button',PK).forEach(b=>b.onclick=()=>{const r=o.rows[b.dataset.k];r.set(clamp(r.get()+ +b.dataset.v,r.min,r.max));o.fix&&o.fix();renderFields();draw()});PK.querySelector('.pkok').onclick=pkClose};draw()}
+/* traveller chips */
+function travellers(f){const T=ST.corp.trav;const draw=()=>{const sug=STAFF.filter(s=>!T.find(t=>t[1]===s[1]));
+  pkOpen(f,head('المسافرون','Travellers','اكتب الاسم واضغط إضافة، أو اختر من موظفي شركتك','Type a name and add it, or pick from your company')+`<div class="tvc">${T.map((t,k)=>`<span><i style="background:${COLS[k%COLS.length]}">${ini(t[1])}</i>${BI(t[0],t[1])}<button data-k="${k}" aria-label="remove"><svg class="i"><use href="#ic-x"/></svg></button></span>`).join('')||`<small style="color:var(--muted)">${BI('لم تتم إضافة مسافرين','No travellers yet')}</small>`}</div>
+   <div class="tvin"><input placeholder="${lang==='ar'?'الاسم الكامل كما في الجواز':'Full name as in passport'}"><button>${BI('إضافة','Add')}</button></div>${sug.length?`<div class="pkl">${BI('موظفون محفوظون','Saved colleagues')}</div><div class="opl">${sug.map(s=>`<button data-s="${s[1]}"><span class="oi" style="background:var(--mist);font-size:12px;font-weight:800">${ini(s[1])}</span><span class="ot"><b>${BI(s[0],s[1])}</b></span><span class="ck2"></span></button>`).join('')}</div>`:''}<div class="calf"><span>${T.length} ${lang==='ar'?(T.length===1?'مسافر':'مسافرين'):'traveller'+(T.length===1?'':'s')}</span><button class="pkok">${BI('تم','Done')}</button></div>`,mob()?null:400);
+  const inp=PK.querySelector('.tvin input'),add=()=>{const v=inp.value.trim().replace(/\s+/g,' ');if(v.length<2){inp.focus();return}if(T.length>=9){toast(lang==='ar'?'الحد الأقصى 9 مسافرين':'Up to 9 travellers');return}T.push([v,v]);renderFields();draw();PK.querySelector('.tvin input').focus()};
+  PK.querySelector('.tvin button').onclick=add;inp.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();add()}};
+  $$('.tvc button',PK).forEach(b=>b.onclick=()=>{T.splice(+b.dataset.k,1);renderFields();draw()});
+  $$('.opl button[data-s]',PK).forEach(b=>b.onclick=()=>{if(T.length>=9)return;T.push(STAFF.find(s=>s[1]===b.dataset.s));renderFields();draw()});
+  PK.querySelector('.pkok').onclick=pkClose};draw()}
+/* wire fields */
+const unitN=n=>lang==='ar'?(n===1?'ليلة واحدة':n===2?'ليلتان':n+' ليالٍ'):n+' night'+(n>1?'s':'');
+const unitD=n=>lang==='ar'?(n===1?'يوم واحد':n===2?'يومان':n+' أيام'):n+' day'+(n>1?'s':'');
+const OPEN={
+ fdates:f=>calendar(f,{range:ST.trip==='rt',a:ST.fl.a,b:ST.fl.b,tA:ST.trip==='rt'?'تواريخ الذهاب والعودة':'تاريخ المغادرة',tE:ST.trip==='rt'?'Depart and return':'Departure date',endA:'العودة',endE:'a return date',unit:n=>lang==='ar'?unitN(n).replace('ليلة واحدة','ليلة'):unitN(n),done:(a,b)=>{ST.fl.a=a;if(b)ST.fl.b=b;else if(ST.fl.b<=a)ST.fl.b=addD(a,3)}}),
+ hdates:f=>calendar(f,{range:true,a:ST.ht.a,b:ST.ht.b,tA:'الوصول والمغادرة',tE:'Check-in and check-out',endA:'المغادرة',endE:'check-out',unit:unitN,done:(a,b)=>{ST.ht.a=a;ST.ht.b=b}}),
+ vdate:f=>calendar(f,{range:false,a:ST.vs.a,tA:'تاريخ السفر',tE:'Travel date',done:a=>{ST.vs.a=a}}),
+ cdates:f=>calendar(f,{range:true,a:ST.car.a,b:ST.car.b,tA:'الاستلام والتسليم',tE:'Pick-up and drop-off',endA:'التسليم',endE:'drop-off',unit:unitD,done:(a,b)=>{ST.car.a=a;ST.car.b=b}}),
+ idates:f=>calendar(f,{range:true,a:ST.ins.a,b:ST.ins.b,tA:'مدة الرحلة',tE:'Trip dates',endA:'العودة',endE:'return',unit:n=>unitD(n+1),done:(a,b)=>{ST.ins.a=a;ST.ins.b=b}}),
+ hrooms:f=>steppers(f,{tA:'الغرف والضيوف',tE:'Rooms and guests',rows:[{a:'الغرف',e:'Rooms',sa:'حتى 5 غرف',se:'Up to 5',min:1,max:5,get:()=>ST.ht.rooms,set:v=>ST.ht.rooms=v},{a:'بالغون',e:'Adults',sa:'12 سنة وأكثر',se:'12+',min:1,max:10,get:()=>ST.ht.ad,set:v=>ST.ht.ad=v},{a:'أطفال',e:'Children',sa:'حتى 11 سنة',se:'0–11',min:0,max:6,get:()=>ST.ht.ch,set:v=>ST.ht.ch=v}],fix:()=>{if(ST.ht.ad<ST.ht.rooms)ST.ht.ad=ST.ht.rooms},sum:()=>F('hrooms').querySelector('.v .'+lang).textContent}),
+ itrav:f=>steppers(f,{tA:'المسافرون',tE:'Travellers',rows:[{a:'بالغون',e:'Adults',sa:'18–64 سنة',se:'18–64',min:0,max:9,get:()=>ST.ins.ad,set:v=>ST.ins.ad=v},{a:'أطفال',e:'Children',sa:'حتى 17 سنة',se:'0–17',min:0,max:9,get:()=>ST.ins.ch,set:v=>ST.ins.ch=v},{a:'كبار السن',e:'Seniors',sa:'65 سنة وأكثر',se:'65+',min:0,max:9,get:()=>ST.ins.sr,set:v=>ST.ins.sr=v}],fix:()=>{if(ST.ins.ad+ST.ins.ch+ST.ins.sr<1)ST.ins.ad=1},sum:()=>F('itrav').querySelector('.v .'+lang).textContent}),
+ vnat:f=>options(f,{tA:'الجنسية',tE:'Nationality',search:true,items:NAT.map(n=>({k:n[0],a:n[1],e:n[2],ic:n[3]})),cur:()=>ST.vs.nat,set:k=>ST.vs.nat=k}),
+ ccat:f=>options(f,{tA:'فئة السيارة',tE:'Car category',w:380,items:CAT.map(c=>({k:c[0],a:c[1],e:c[2],sa:c[3]+' · من '+c[5]+' ر.س/يوم',se:c[4]+' · from SAR '+c[5]+'/day',ic:'<svg class="i"><use href="#ic-car"/></svg>'})),cur:()=>ST.car.cat,set:k=>ST.car.cat=k,keepOpen:()=>true,
+  extra:()=>`<div class="tgl"><span>${BI('مع سائق خاص','With a chauffeur')}<small>${BI('+180 ر.س لليوم','+SAR 180 per day')}</small></span><button class="sw2" role="switch" aria-checked="${ST.car.drv}"></button></div><div class="calf"><span></span><button class="pkok">${BI('تم','Done')}</button></div>`,
+  after:draw=>{PK.querySelector('.sw2').onclick=()=>{ST.car.drv=!ST.car.drv;renderFields();draw()};PK.querySelector('.pkok').onclick=pkClose}}),
+ ccc:f=>options(f,{tA:'مركز التكلفة',tE:'Cost centre',sA:'تظهر التكلفة في تقرير هذا القسم',sE:'Costs are reported to this department',items:CC.map(c=>({k:c[0],a:c[0]+' · '+c[1],e:c[0]+' · '+c[2],ic:'<svg class="i"><use href="#ic-brief"/></svg>'})),cur:()=>ST.corp.cc,set:k=>ST.corp.cc=k}),
+ cpur:f=>options(f,{tA:'غرض الرحلة',tE:'Trip purpose',sA:'يُستخدم في الموافقات والتقارير',sE:'Used for approvals and reports',w:360,items:PUR.map(p=>({k:p[0],a:p[1],e:p[2],ic:p[3]})),cur:()=>ST.corp.pur,set:k=>ST.corp.pur=k,keepOpen:k=>k==='other',
+  extra:()=>`<div class="pkother ${ST.corp.pur==='other'?'on':''}"><input placeholder="${lang==='ar'?'اكتب غرض الرحلة':'Describe the purpose'}" value="${ST.corp.purTxt.replace(/"/g,'&quot;')}"><button class="pkok">${BI('تم','Done')}</button></div>`,
+  after:()=>{const w=PK.querySelector('.pkother');if(w.classList.contains('on')){const i=w.querySelector('input');setTimeout(()=>i.focus(),50);const sv=()=>{ST.corp.purTxt=i.value.trim();renderFields();pkClose()};w.querySelector('button').onclick=sv;i.onkeydown=e=>{if(e.key==='Enter')sv()}}}}),
+ ctrav:travellers};
+$$('.f.fpk').forEach(f=>{const go=e=>{if(e)e.stopPropagation();if(pkF===f){pkClose();return}pop.classList.remove('open');AC.classList.remove('open');OPEN[f.dataset.pk](f)};f.addEventListener('click',go);f.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
+/* trip type affects dates */
+$$('[data-trip]').forEach(c=>c.addEventListener('click',()=>{ST.trip=c.dataset.trip;renderFields();if(c.dataset.trip==='mc')toast(lang==='ar'?'الوجهات المتعددة متاحة من مساعد فرسان أو التطبيق':'Multi-city is available via the assistant or the app')}));
+/* pax names */
+function buildNames(){const n=ad+ch,box=$('#pnames');if(!box)return;ST.names.length=Math.max(ST.names.length,n);
+ box.innerHTML=`<div class="pkl">${BI('أسماء المسافرين (اختياري)','Traveller names (optional)')}</div>`+Array.from({length:n},(_,k)=>`<label><em class="num">${k+1}</em><input data-n="${k}" value="${(ST.names[k]||'').replace(/"/g,'&quot;')}" placeholder="${k<ad?(lang==='ar'?'اسم البالغ كما في الجواز':'Adult name as in passport'):(lang==='ar'?'اسم الطفل':'Child name')}"></label>`).join('');
+ $$('input',box).forEach(i=>i.oninput=()=>{ST.names[+i.dataset.n]=i.value})}
+$$('[data-d],[data-c]').forEach(b=>b.addEventListener('click',buildNames));$('#paxF').addEventListener('click',()=>{pkClose();buildNames()});
+const _sl=setLang;
+$('#langBtn').addEventListener('click',()=>{renderFields();buildNames();if(pkF)pkClose()});
+renderFields();buildNames();
+
+/* ===== brand search loader ===== */
+const SL=document.createElement('div');SL.className='sld';SL.setAttribute('aria-live','polite');document.body.appendChild(SL);
+function runLoader(an,cb){const A=lang==='ar',dur=RM?500:2300;SL.style.setProperty('--sd',dur+'ms');
+ const vis=an.a?`<div class="sroute"><svg viewBox="0 0 400 150" preserveAspectRatio="none"><path class="base" d="M20,120 C120,-20 280,-20 380,120"/><path class="draw" d="M20,120 C120,-20 280,-20 380,120"/><circle class="pt" cx="20" cy="120" r="7"/><circle class="pt b" cx="380" cy="120" r="7"/></svg><span class="pl2"><svg class="i"><use href="#ic-flight"/></svg></span><div class="rlab a"><b>${an.a.c}</b>${an.a[lang]}</div><div class="rlab b"><b>${an.b.c}</b>${an.b[lang]}</div></div>`:`<div class="sicon"><svg class="i"><use href="#${an.icon}"/></svg></div>`;
+ SL.innerHTML=`<div class="glow"></div><div class="sldin"><div class="emb"><svg viewBox="0 0 256 256"><use href="#logo" width="890.068" height="256"/></svg></div>${vis}<h4>${A?an.tA:an.tE}</h4><div class="stx"><span>${(A?an.sA:an.sE)[0]}</span></div><div class="sbar"><i></i></div></div>`;
+ SL.classList.remove('on');void SL.offsetWidth;SL.classList.add('on');document.documentElement.style.overflow='hidden';
+ const steps=A?an.sA:an.sE;let k=0;const st=setInterval(()=>{k++;if(k>=steps.length)return;SL.querySelector('.stx').innerHTML=`<span>${steps[k]}</span>`},Math.max(400,dur/steps.length));
+ if(an.a){const p=SL.querySelector('.draw'),L2=p.getTotalLength(),g=SL.querySelector('.pl2');p.style.strokeDasharray=L2;p.style.strokeDashoffset=L2;const t0=performance.now();
+  const fr=t=>{let q=Math.min(1,(t-t0)/(dur*.92));const e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;p.style.strokeDashoffset=L2*(1-e);const pt=p.getPointAtLength(L2*e),pt2=p.getPointAtLength(Math.min(L2,L2*e+1));
+   const box=SL.querySelector('.sroute'),sx=box.offsetWidth/400,sy=box.offsetHeight/150;const ang=Math.atan2((pt2.y-pt.y)*sy,(pt2.x-pt.x)*sx)*180/Math.PI;
+   g.style.transform=`translate(${pt.x*sx}px,${pt.y*sy}px)`;g.firstChild.style.transform=`rotate(${ang+16}deg)`;if(q<1&&SL.classList.contains('on'))requestAnimationFrame(fr)};requestAnimationFrame(fr)}
+ setTimeout(()=>{clearInterval(st);cb();SL.classList.remove('on')},dur)}
+const _openRS=openRS;
+openRS=function(D){const A=lang==='ar',tab=$('.svc [role=tab][aria-selected=true]').dataset.tab;let an;
+ const nat=NAT.find(x=>x[0]===ST.vs.nat);
+ if(D.kind==='flight'){const a=resolve($('#from')),b=resolve($('#to'));const ow=ST.trip!=='rt';
+  D.sub=`${ow?rangeTxt(ST.fl.a)[A?0:1]:rangeTxt(ST.fl.a,ST.fl.b)[A?0:1]} · ${ad+ch} ${A?(ad+ch>1?'مسافرين':'مسافر'):(ad+ch>1?'travellers':'traveller')} · ${$('#clsS .'+lang).textContent}`;
+  an={a,b,tA:tab==='combo'?'نجهّز لك رحلتك والفندق':'نبحث لك عن أفضل الرحلات',tE:tab==='combo'?'Building your flight + hotel':'Finding the best flights',sA:['نقارن أكثر من 450 شركة طيران','نتحقق من المقاعد المتاحة',tab==='combo'?'نضيف أفضل الفنادق في '+b.ar:'نرتب لك الأسعار الأفضل'],sE:['Comparing 450+ airlines','Checking seat availability',tab==='combo'?'Adding top hotels in '+b.en:'Ranking the best fares']}}
+ else if(D.kind==='hotel'){const h=ST.ht,n=nights(h.a,h.b);D.sub=`${rangeTxt(h.a,h.b)[A?0:1]} · ${F('hrooms').querySelector('.v .'+lang).textContent}`;const c=cityBy(D.items[0].c);
+  an={icon:'ic-bed',tA:`نبحث في فنادق ${c.ar}`,tE:`Searching hotels in ${c.en}`,sA:['نتحقق من التوفر لتواريخك',`نحسب السعر لـ ${unitN(n)}`,'نجهز لك أفضل العروض'],sE:['Checking availability for your dates',`Pricing ${unitN(n)}`,'Preparing the best deals']}}
+ else if(tab==='visa'){D.sub=`${A?'مسافر '+nat[1]:nat[2]+' traveller'} · ${rangeTxt(ST.vs.a)[A?0:1]}`;an={icon:'ic-passport',tA:'نراجع متطلبات الدخول',tE:'Checking entry requirements',sA:['نطابق الجنسية مع الوجهة','نجهز قائمة المستندات'],sE:['Matching nationality and destination','Preparing your document list']}}
+ else if(tab==='car'){const ct=CAT.find(x=>x[0]===ST.car.cat);D.sub=`${rangeTxt(ST.car.a,ST.car.b)[A?0:1]} · ${A?ct[1]:ct[2]}${ST.car.drv?(A?' · مع سائق':' · with chauffeur'):''}`;an={icon:'ic-car',tA:'نبحث عن سيارتك',tE:'Finding your car',sA:['نقارن شركات التأجير','نتحقق من التوفر في موقع الاستلام'],sE:['Comparing rental companies','Checking pick-up availability']}}
+ else{const it=ST.ins.ad+ST.ins.ch+ST.ins.sr;D.sub=`${rangeTxt(ST.ins.a,ST.ins.b)[A?0:1]} · ${F('itrav').querySelector('.v .'+lang).textContent}`;an={icon:'ic-shield',tA:'نجهز عروض التأمين',tE:'Preparing insurance quotes',sA:['نقارن التغطيات','نحسب السعر لـ'+(it>1?' '+it+' مسافرين':' مسافر واحد')],sE:['Comparing coverage',`Pricing for ${it} traveller${it>1?'s':''}`]}}
+ pkClose();AC.classList.remove('open');runLoader(an,()=>_openRS(D))};
+
+}
 /* ===== scroll engine ===== */
 const bar=$('#bar'),hero=$('#hero');
 const DS=$('#offers'),dprog=$('#dprog');
