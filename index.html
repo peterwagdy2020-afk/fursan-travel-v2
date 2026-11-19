@@ -44,6 +44,8 @@ html{scroll-behavior:smooth}
 html{background:#082211}
 h1,h2,h3,.hero h1{font-family:var(--fd)}
 html[lang=ar] h1,html[lang=ar] h2{font-feature-settings:"swsh" 1,"calt" 1}
+html[lang=en] h1,html[lang=en] h2,html[lang=en] .hero h1{font-weight:600;letter-spacing:-.02em}
+html[lang=en] h3,html[lang=en] .mini b{font-weight:600}
 html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] h1 *,html[lang=ar] h2 *,html[lang=ar] h3 *,html[lang=ar] .mini b{letter-spacing:0!important}
 body{margin:0;background:var(--white);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 html[lang=ar] .en,html[lang=en] .ar{display:none!important}
@@ -595,11 +597,12 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
 .happ,.appm,.appbar{display:none}
 @media (max-width:760px){
   .bar .seg,.bar .hide-s{display:none!important}
-  .mapp{display:inline-flex!important;align-items:center;height:38px;padding:0 14px;border-radius:12px;background:var(--amber);color:var(--ink);font-weight:800;font-size:13.5px;white-space:nowrap}
   .hero{min-height:88svh;padding:96px 0 70px}
   .hero h1{font-size:clamp(38px,11vw,52px)}
   .hero .lead{font-size:16px}
   .hdots{margin-top:14px}
+  .hero h1{display:none}
+  .hero .eyebrow{margin-bottom:10px}
   .happ{display:block;margin-top:22px}
   .happ .stores{display:flex;gap:10px;flex-wrap:wrap}
   .happ .stores .badge,.apcard .stores .badge{height:46px}
@@ -630,7 +633,8 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
   .appbar .x{width:30px;height:30px;display:grid;place-items:center;opacity:.6;flex:none;color:#fff}.appbar .x svg{width:14px;height:14px}
   .wv,#aiBtn{display:none!important}
   .svcs{padding:60px 0 30px}
-  .stack{grid-template-columns:1fr 1fr;gap:12px}
+  .stack{grid-template-columns:1fr 1fr;gap:12px;height:auto!important}
+  .sstage>.wrap{height:auto!important}
   .scard{min-height:0!important;border-radius:22px}
   .scard .txt{padding:16px 16px 10px}
   .scard .txt h3{font-size:18px}
@@ -664,7 +668,7 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
 }
 @media (max-width:760px){
   .hide-s{display:none!important}
-  .bar{height:58px;border-radius:18px}.langb{padding:0 8px;gap:6px}.avbtn{width:38px;height:38px}.avbtn img{border-radius:12px}
+  .bar{height:58px;border-radius:18px;overflow:hidden}.langb{padding:0 8px;gap:6px}.avbtn{width:36px;height:36px;flex:none;box-shadow:0 0 0 1.5px rgba(255,255,255,.8)}.avbtn img{border-radius:11px}.avbtn .dot{width:10px;height:10px;bottom:-1px;inset-inline-end:-1px}
   .brand{height:28px}
   .bar{gap:8px;padding-inline:12px 8px}
   .seg button{padding:6px 9px;font-size:13px}
@@ -792,7 +796,7 @@ html[dir=rtl] .pkgo svg{transform:scaleX(-1)}
         <a id="openAi2"><svg class="i"><use href="#ic-spark"/></svg><span><b class="ar">مساعد فرسان</b><b class="en">Fursan assistant</b><small class="ar">احجز بصوتك أو بالكتابة</small><small class="en">Book by voice or text</small></span></a>
       </div>
     </div>
-    <a class="mapp" href="#app" style="display:none"><span class="ar">حمّل التطبيق</span><span class="en">Get the app</span></a><button class="ub langb" id="langBtn"><span class="ar"><img class="flag" src="i/flag-us.svg" alt="">EN</span><span class="en"><img class="flag" src="i/flag-sa.svg" alt="">ع</span></button>
+    <button class="ub langb" id="langBtn"><span class="ar"><img class="flag" src="i/flag-us.svg" alt="">EN</span><span class="en"><img class="flag" src="i/flag-sa.svg" alt="">ع</span></button>
     <div class="drop" id="userDrop">
       <button class="avbtn" id="userBtn" aria-label="Account"><img src="i/avatar.webp" alt=""><span class="dot"></span></button>
       <div class="menu glass umenu">
